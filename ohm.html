@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ohm Law</title>
+	<script type="text/javascript" src="ohm.js"></script>
+</head>
+
+<body>
+
+<form onchange="calculate()" onload="calculate()">
+	<select id="param">
+	   <option value="V" selected="selected">V</option>
+	   <option value="R">R</option>
+	   <option value="I">I</option>
+	 </select>
+	<table>
+		<tr>
+			<td>V</td>
+			<td><input type="number" id="V"</td>
+			<td><select id="prefix_V">
+               <option value="1" selected="selected">V</option>
+               <option value="1e-3">mV</option>
+               <option value="1e-6">uV</option>
+             </select></td>
+		</tr>
+		<tr>
+			<td>R</td>
+			<td><input type="number" id="R"</td>
+			<td><select id="prefix_R" value="Ohm">
+               <option value="1e6">MOhm</option>
+               <option value="1e3">kOhm</option>
+               <option value="1" selected="selected">Ohm</option>
+               <option value="1e-3">mOhm</option>
+             </select></td>
+		</tr>
+		<tr>
+			<td>I</td>
+			<td><input type="number" id="I"</td>
+			<td><select id="prefix_I">
+               <option value="1" selected="selected">A</option>
+               <option value="1e-3">mA</option>
+               <option value="1e-6">uA</option>
+               <option value="1e-9">nA</option>
+             </select></td>
+		</tr>
+	</table>
+</form>
+
+
+<p id="remember"></p>
+
+</body>
+</html>
