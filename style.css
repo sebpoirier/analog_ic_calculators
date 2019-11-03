@@ -1,0 +1,9 @@
+html { 
+	font-size: calc(2em + 1vw)
+}
+select { 
+	font-size: 1em
+}
+input { 
+	font-size: 1em
+}

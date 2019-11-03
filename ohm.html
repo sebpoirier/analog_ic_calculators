@@ -2,21 +2,17 @@
 <html>
 <head>
 	<title>Ohm Law</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="ohm.js"></script>
 </head>
 
 <body>
 
 <form onchange="calculate()" onload="calculate()">
-	<select id="param">
-	   <option value="V" selected="selected">V</option>
-	   <option value="R">R</option>
-	   <option value="I">I</option>
-	 </select>
 	<table>
 		<tr>
-			<td>V</td>
-			<td><input type="number" id="V"</td>
+			<td><input type="button" value="V" onclick="button_V()"></td>
+			<td><input type="number" id="V" disabled="disabled"</td>
 			<td><select id="prefix_V">
                <option value="1" selected="selected">V</option>
                <option value="1e-3">mV</option>
@@ -24,7 +20,7 @@
              </select></td>
 		</tr>
 		<tr>
-			<td>R</td>
+			<td><input type="button" value="R" onclick="button_R()"></td>
 			<td><input type="number" id="R"</td>
 			<td><select id="prefix_R" value="Ohm">
                <option value="1e6">MOhm</option>
@@ -34,7 +30,7 @@
              </select></td>
 		</tr>
 		<tr>
-			<td>I</td>
+			<td><input type="button" value="I" onclick="button_I()"></td>
 			<td><input type="number" id="I"</td>
 			<td><select id="prefix_I">
                <option value="1" selected="selected">A</option>
