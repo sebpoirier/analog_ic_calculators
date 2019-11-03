@@ -3,26 +3,26 @@
 <head>
 	<title>Ohm Law</title>
 	<link href="style.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="utils.js"></script>
 	<script type="text/javascript" src="ohm.js"></script>
 </head>
 
 <body>
-
 <form onchange="calculate()" onload="calculate()">
 	<table>
 		<tr>
-			<td><input type="button" value="V" onclick="button_V()"></td>
-			<td><input type="number" id="V" disabled="disabled"</td>
-			<td><select id="prefix_V">
+			<td><input type="button" value="V" onclick="button_disable('V')"></td>
+			<td><input type="number" id="V" class="input_number" disabled="disabled"</td>
+			<td><select id="V_prefix">
                <option value="1" selected="selected">V</option>
                <option value="1e-3">mV</option>
                <option value="1e-6">uV</option>
              </select></td>
 		</tr>
 		<tr>
-			<td><input type="button" value="R" onclick="button_R()"></td>
-			<td><input type="number" id="R"</td>
-			<td><select id="prefix_R" value="Ohm">
+			<td><input type="button" value="R" onclick="button_disable('R')"></td>
+			<td><input type="number" id="R" class="input_number"</td>
+			<td><select id="R_prefix" value="Ohm">
                <option value="1e6">MOhm</option>
                <option value="1e3">kOhm</option>
                <option value="1" selected="selected">Ohm</option>
@@ -30,9 +30,9 @@
              </select></td>
 		</tr>
 		<tr>
-			<td><input type="button" value="I" onclick="button_I()"></td>
-			<td><input type="number" id="I"</td>
-			<td><select id="prefix_I">
+			<td><input type="button" value="I" onclick="button_disable('I')"></td>
+			<td><input type="number" id="I" class="input_number"</td>
+			<td><select id="I_prefix">
                <option value="1" selected="selected">A</option>
                <option value="1e-3">mA</option>
                <option value="1e-6">uA</option>
@@ -42,8 +42,6 @@
 	</table>
 </form>
 
-
-<p id="remember"></p>
 
 </body>
 </html>
