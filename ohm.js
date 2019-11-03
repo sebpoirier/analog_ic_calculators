@@ -6,18 +6,17 @@ function calculate() {
 
 	// Calculate
 	if (document.getElementById("V").disabled) {
-		var sel = "V";
-		var param = R * I;
+		document.getElementById("V").value = R * I;
+		document.getElementById("V").value /= document.getElementById("prefix_V").value;
 	}
-	else if (document.getElementById("R").disabled)  {
-		var sel = "R";
-		var param = V / I;
+	if (document.getElementById("R").disabled) {
+		document.getElementById("R").value = V / I;
+		document.getElementById("R").value /= document.getElementById("prefix_R").value;
 	}
-	else if (document.getElementById("I").disabled) {
-		var sel = "I";
-		var param = V / R;
+	if (document.getElementById("I").disabled) {
+		document.getElementById("I").value = V / R;
+		document.getElementById("I").value /= document.getElementById("prefix_I").value;
 	}
-	document.getElementById(sel).value = param/document.getElementById("prefix_" + sel).value;
 }
 
 function button_V() {
