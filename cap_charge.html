@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cap charge</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="utils.js"></script>
+	<script type="text/javascript" src="cap_charge.js"></script>
+</head>
+
+<body>
+<form onchange="calculate()" onload="calculate()">
+	<table>  
+  		<tr>
+			<td><input type="button" value="C" onclick="button_disable('C')"></td>
+			<td><input type="number" id="C" class="input_number" disabled="disabled"</td>
+			<td><select id="C_prefix">
+               <option value="1e-6" selected="selecter">uF</option>
+               <option value="1e-9">nF</option>
+               <option value="1e-12">pF</option>
+             </select></td>
+		</tr>
+  		<tr>
+			<td><input type="button" value="V" onclick="button_disable('V')"></td>
+			<td><input type="number" id="V" class="input_number"</td>
+			<td><select id="V_prefix">
+               <option value="1" selected="selected">V</option>
+               <option value="1e-3">mV</option>
+               <option value="1e-6">uV</option>
+             </select></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="I" onclick="button_disable('I')"></td>
+			<td><input type="number" id="I" class="input_number"</td>
+			<td><select id="I_prefix">
+               <option value="1" selected="selected">A</option>
+               <option value="1e-3">mA</option>
+               <option value="1e-6">uA</option>
+               <option value="1e-9">nA</option>
+             </select></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="t" onclick="button_disable('t')"></td>
+			<td><input type="number" id="t" class="input_number"</td>
+			<td><select id="t_prefix">
+               <option value="1e-6" selected="selecter">us</option>
+               <option value="1e-9">ns</option>
+               <option value="1e-12">ps</option>
+             </select></td>
+		</tr>
+	</table>
+</form>
+
+
+</body>
+</html>
