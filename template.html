@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{t1}</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="utils.js"></script>
+    <script type="text/javascript" src="{f1}.js"></script>
+</head>
+
+<body>
+<form onchange="calculate()" onload="calculate()">
+	<table>
+		<tr>
+            <td><input type="button" value="{p1}" onclick="button_disable('{p1}')"></td>
+            <td><input type="number" id="{p1}" class="input_number" disabled="disabled"</td>
+            <td><select id="{p1}_prefix">
+                <option value="{u1_v1}" selected="selected">{u1_t1}</option>
+                <option value="{u1_v2}">{u1_t2}</option>
+                <option value="{u1_v3}">{u1_t3}</option>
+             </select></td>
+		</tr>
+		<tr>
+            <td><input type="button" value="{p2}" onclick="button_disable('{p2}')"></td>
+            <td><input type="number" id="{p2}" class="input_number"</td>
+            <td><select id="{p2}_prefix">
+                    <option value="{u2_v1}" selected="selected">{u2_t1}</option>
+                    <option value="{u2_v2}">{u2_t2}</option>
+                    <option value="{u2_v3}">{u2_t3}</option>
+             </select></td>
+		</tr>
+		<tr>
+            <td><input type="button" value="{p3}" onclick="button_disable('{p3}')"></td>
+            <td><input type="number" id="{p3}" class="input_number"</td>
+            <td><select id="{p3}_prefix">
+                <option value="{u3_v1}" selected="selected">{u3_t1}</option>
+                <option value="{u3_v2}">{u3_t2}</option>
+                <option value="{u3_v3}">{u3_t3}</option>
+             </select></td>
+		</tr>
+	</table>
+</form>
+
+
+</body>
+</html>
