@@ -1,13 +1,28 @@
-function calculate() {
-	// Get the values of the input fields
-	var C = document.getElementById("C").value * document.getElementById("C_prefix").value;
-	var V = document.getElementById("V").value * document.getElementById("V_prefix").value;
-	var I = document.getElementById("I").value * document.getElementById("I_prefix").value;
-	var t = document.getElementById("t").value * document.getElementById("t_prefix").value;
+var info = {
+    "inout": {
+        "V": {"unit": "V"},
+        "C": {"unit": "F"},
+        "t": {"unit": "s"},
+        "I": {"unit": "A"}
+    }
+};
 
-	// Calculate
-	assign_if_matches("C", I * t / V);
-	assign_if_matches("V", I * t / C);
-	assign_if_matches("I", C * V / t);
-	assign_if_matches("t", C * V / I);
+function V_calc(I, t, C) {
+    var V = I * t / C;
+    return ([V]);
+}
+
+function C_calc(I, t, V) {
+    var C = I * t / V;
+    return ([C]);
+}
+
+function I_calc(C, V, t) {
+    var I = C * V / t;
+    return ([I]);
+}
+
+function t_calc(C, V, I) {
+    var t = C * V / I;
+    return ([t]);
 }
