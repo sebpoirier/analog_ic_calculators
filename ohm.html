@@ -9,71 +9,89 @@
 
     <body>
 
-    <h3>V_calc</h3>
-<form oninput="
+    <form oninput="
 V.value = convert_si(V_calc(parse_si(R.value),parse_si(I.value))[0]);
+P.value = convert_si(V_calc(parse_si(R.value),parse_si(I.value))[1]);
 ">
-        <table>
+        <table><caption>V_calc</caption>
+
             <tr>
                 <td>R</td>
-                <td><input name="R" maxlength="20" size="20"/></td>
+                <td class="input"><input name="R" maxlength="20" size="20"/></td>
                 <td>Ohm</td>
             </tr>
             <tr>
                 <td>I</td>
-                <td><input name="I" maxlength="20" size="20"/></td>
+                <td class="input"><input name="I" maxlength="20" size="20"/></td>
                 <td>A</td>
             </tr>
             <tr>
                 <td>V</td>
-                <td><output name="V"></output></td>
+                <td class="output"><output name="V"></output></td>
                 <td>V</td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td class="output"><output name="P"></output></td>
+                <td>W</td>
             </tr>
         </table>
     </form>
 
-<h3>R_calc</h3>
 <form oninput="
 R.value = convert_si(R_calc(parse_si(V.value),parse_si(I.value))[0]);
+P.value = convert_si(R_calc(parse_si(V.value),parse_si(I.value))[1]);
 ">
-        <table>
+        <table><caption>R_calc</caption>
+
             <tr>
                 <td>V</td>
-                <td><input name="V" maxlength="20" size="20"/></td>
+                <td class="input"><input name="V" maxlength="20" size="20"/></td>
                 <td>V</td>
             </tr>
             <tr>
                 <td>I</td>
-                <td><input name="I" maxlength="20" size="20"/></td>
+                <td class="input"><input name="I" maxlength="20" size="20"/></td>
                 <td>A</td>
             </tr>
             <tr>
                 <td>R</td>
-                <td><output name="R"></output></td>
+                <td class="output"><output name="R"></output></td>
                 <td>Ohm</td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td class="output"><output name="P"></output></td>
+                <td>W</td>
             </tr>
         </table>
     </form>
 
-<h3>I_calc</h3>
 <form oninput="
 I.value = convert_si(I_calc(parse_si(V.value),parse_si(R.value))[0]);
+P.value = convert_si(I_calc(parse_si(V.value),parse_si(R.value))[1]);
 ">
-        <table>
+        <table><caption>I_calc</caption>
+
             <tr>
                 <td>V</td>
-                <td><input name="V" maxlength="20" size="20"/></td>
+                <td class="input"><input name="V" maxlength="20" size="20"/></td>
                 <td>V</td>
             </tr>
             <tr>
                 <td>R</td>
-                <td><input name="R" maxlength="20" size="20"/></td>
+                <td class="input"><input name="R" maxlength="20" size="20"/></td>
                 <td>Ohm</td>
             </tr>
             <tr>
                 <td>I</td>
-                <td><output name="I"></output></td>
+                <td class="output"><output name="I"></output></td>
                 <td>A</td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td class="output"><output name="P"></output></td>
+                <td>W</td>
             </tr>
         </table>
     </form>

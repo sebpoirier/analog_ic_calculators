@@ -1,0 +1,52 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>cap_consumption</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+
+    <form oninput="
+I.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(f.value))[0]);
+P.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(f.value))[1]);
+">
+        <table><caption>I_calc</caption>
+
+            <tr>
+                <td>C</td>
+                <td class="input"><input name="C" maxlength="20" size="20"/></td>
+                <td>F</td>
+            </tr>
+            <tr>
+                <td>V</td>
+                <td class="input"><input name="V" maxlength="20" size="20"/></td>
+                <td>V</td>
+            </tr>
+            <tr>
+                <td>f</td>
+                <td class="input"><input name="f" maxlength="20" size="20"/></td>
+                <td>Hz</td>
+            </tr>
+            <tr>
+                <td>I</td>
+                <td class="output"><output name="I"></output></td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td class="output"><output name="P"></output></td>
+                <td>W</td>
+            </tr>
+        </table>
+    </form>
+
+
+<script type="text/javascript" src="utils.js"></script>
+<script type="text/javascript" src="cap_consumption.js"></script>
+    
+
+    </body>
+    </html>

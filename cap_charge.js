@@ -3,26 +3,31 @@ var info = {
         "V": {"unit": "V"},
         "C": {"unit": "F"},
         "t": {"unit": "s"},
-        "I": {"unit": "A"}
+        "I": {"unit": "A"},
+        "SR": {"unit": "V/s"}
     }
 };
 
 function V_calc(I, t, C) {
     var V = I * t / C;
-    return ([V]);
+    var SR = V / t;
+    return ([V, SR]);
 }
 
 function C_calc(I, t, V) {
     var C = I * t / V;
-    return ([C]);
+    var SR = V / t;
+    return ([C, SR]);
 }
 
 function I_calc(C, V, t) {
     var I = C * V / t;
-    return ([I]);
+    var SR = V / t;
+    return ([I, SR]);
 }
 
 function t_calc(C, V, I) {
     var t = C * V / I;
-    return ([t]);
+    var SR = V / t;
+    return ([t, SR]);
 }

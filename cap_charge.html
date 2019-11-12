@@ -9,114 +9,138 @@
 
     <body>
 
-    <h3>V_calc</h3>
-<form oninput="
+    <form oninput="
 V.value = convert_si(V_calc(parse_si(I.value),parse_si(t.value),parse_si(C.value))[0]);
+SR.value = convert_si(V_calc(parse_si(I.value),parse_si(t.value),parse_si(C.value))[1]);
 ">
-        <table>
+        <table><caption>V_calc</caption>
+
             <tr>
                 <td>I</td>
-                <td><input name="I" maxlength="20" size="20"/></td>
+                <td class="input"><input name="I" maxlength="20" size="20"/></td>
                 <td>A</td>
             </tr>
             <tr>
                 <td>t</td>
-                <td><input name="t" maxlength="20" size="20"/></td>
+                <td class="input"><input name="t" maxlength="20" size="20"/></td>
                 <td>s</td>
             </tr>
             <tr>
                 <td>C</td>
-                <td><input name="C" maxlength="20" size="20"/></td>
+                <td class="input"><input name="C" maxlength="20" size="20"/></td>
                 <td>F</td>
             </tr>
             <tr>
                 <td>V</td>
-                <td><output name="V"></output></td>
+                <td class="output"><output name="V"></output></td>
                 <td>V</td>
+            </tr>
+            <tr>
+                <td>SR</td>
+                <td class="output"><output name="SR"></output></td>
+                <td>V/s</td>
             </tr>
         </table>
     </form>
 
-<h3>C_calc</h3>
 <form oninput="
 C.value = convert_si(C_calc(parse_si(I.value),parse_si(t.value),parse_si(V.value))[0]);
+SR.value = convert_si(C_calc(parse_si(I.value),parse_si(t.value),parse_si(V.value))[1]);
 ">
-        <table>
+        <table><caption>C_calc</caption>
+
             <tr>
                 <td>I</td>
-                <td><input name="I" maxlength="20" size="20"/></td>
+                <td class="input"><input name="I" maxlength="20" size="20"/></td>
                 <td>A</td>
             </tr>
             <tr>
                 <td>t</td>
-                <td><input name="t" maxlength="20" size="20"/></td>
+                <td class="input"><input name="t" maxlength="20" size="20"/></td>
                 <td>s</td>
             </tr>
             <tr>
                 <td>V</td>
-                <td><input name="V" maxlength="20" size="20"/></td>
+                <td class="input"><input name="V" maxlength="20" size="20"/></td>
                 <td>V</td>
             </tr>
             <tr>
                 <td>C</td>
-                <td><output name="C"></output></td>
+                <td class="output"><output name="C"></output></td>
                 <td>F</td>
+            </tr>
+            <tr>
+                <td>SR</td>
+                <td class="output"><output name="SR"></output></td>
+                <td>V/s</td>
             </tr>
         </table>
     </form>
 
-<h3>I_calc</h3>
 <form oninput="
 I.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(t.value))[0]);
+SR.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(t.value))[1]);
 ">
-        <table>
+        <table><caption>I_calc</caption>
+
             <tr>
                 <td>C</td>
-                <td><input name="C" maxlength="20" size="20"/></td>
+                <td class="input"><input name="C" maxlength="20" size="20"/></td>
                 <td>F</td>
             </tr>
             <tr>
                 <td>V</td>
-                <td><input name="V" maxlength="20" size="20"/></td>
+                <td class="input"><input name="V" maxlength="20" size="20"/></td>
                 <td>V</td>
             </tr>
             <tr>
                 <td>t</td>
-                <td><input name="t" maxlength="20" size="20"/></td>
+                <td class="input"><input name="t" maxlength="20" size="20"/></td>
                 <td>s</td>
             </tr>
             <tr>
                 <td>I</td>
-                <td><output name="I"></output></td>
+                <td class="output"><output name="I"></output></td>
                 <td>A</td>
+            </tr>
+            <tr>
+                <td>SR</td>
+                <td class="output"><output name="SR"></output></td>
+                <td>V/s</td>
             </tr>
         </table>
     </form>
 
-<h3>t_calc</h3>
 <form oninput="
 t.value = convert_si(t_calc(parse_si(C.value),parse_si(V.value),parse_si(I.value))[0]);
+SR.value = convert_si(t_calc(parse_si(C.value),parse_si(V.value),parse_si(I.value))[1]);
 ">
-        <table>
+        <table><caption>t_calc</caption>
+
             <tr>
                 <td>C</td>
-                <td><input name="C" maxlength="20" size="20"/></td>
+                <td class="input"><input name="C" maxlength="20" size="20"/></td>
                 <td>F</td>
             </tr>
             <tr>
                 <td>V</td>
-                <td><input name="V" maxlength="20" size="20"/></td>
+                <td class="input"><input name="V" maxlength="20" size="20"/></td>
                 <td>V</td>
             </tr>
             <tr>
                 <td>I</td>
-                <td><input name="I" maxlength="20" size="20"/></td>
+                <td class="input"><input name="I" maxlength="20" size="20"/></td>
                 <td>A</td>
             </tr>
             <tr>
                 <td>t</td>
-                <td><output name="t"></output></td>
+                <td class="output"><output name="t"></output></td>
                 <td>s</td>
+            </tr>
+            <tr>
+                <td>SR</td>
+                <td class="output"><output name="SR"></output></td>
+                <td>V/s</td>
             </tr>
         </table>
     </form>

@@ -1,17 +1,20 @@
 html { 
-	font-size: calc(2.5em + 1vw)
+	font-size: calc(2.5em + 1vw);
 }
 select { 
-	font-size: 1em
+	font-size: 1em;
 }
 input { 
-	font-size: 1em
+	font-size: 1em;
 }
 input[type=button] {
-	width: 100%
+	width: 100%;
+}
+td.output, td.input {
+	background-color: #eee;
 }
 select {
-	width: 100%
+	width: 100%;
 }  
 table {
     margin-left:auto; 
