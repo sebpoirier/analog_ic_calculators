@@ -23,11 +23,9 @@ def generate_html(name):
 
     in_regex = re.compile(r'function\s+(\w+)\((.+)\)')
     in_findall = in_regex.findall(data)
-    print(in_findall)
 
     out_regex = re.compile(r'return\s+\(\[(.+)\]\)')
     out_findall = out_regex.findall(data)
-    print(out_findall)
 
     info_regex = re.compile(r'var info = ({.*});')
     info_findall = info_regex.findall(data.replace('\n', ' '))[0]
@@ -86,6 +84,6 @@ def generate_html(name):
         f_out.write(html_out)
 
 if __name__ == '__main__':
-    names = ['ohm', 'cap_charge', 'cap_consumption']
+    names = ['ohm', 'cap_charge', 'cap_consumption', 'ind_charge']
     for name in names:
         generate_html(name)
