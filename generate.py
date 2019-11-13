@@ -1,8 +1,7 @@
 import re
 import json
 
-
-def generate_html(name):
+def generate_html(name, body):
 # header
     html_out = f'''
     <!DOCTYPE html>
@@ -16,7 +15,19 @@ def generate_html(name):
     <body>
 
     '''
+    html_out += body
 
+# footer
+    html_out += '''
+
+    </body>
+    </html>'''
+
+# write to file
+    with open(name + '.html', 'w') as f_out:
+        f_out.write(html_out)
+
+def generate_form(name):
 # js extract
     with open(name + '.js', 'r') as js_in:
         data = js_in.read()
@@ -32,6 +43,7 @@ def generate_html(name):
     info_dict = json.loads(info_findall)
 
 # form
+    html_out = ''
     for form_i in range(len(in_findall)):
         fun_name = in_findall[form_i][0]
         in_names = [x.strip() for x in in_findall[form_i][1].split(',')]
@@ -52,7 +64,7 @@ def generate_html(name):
             html_out += '''
             <tr>
                 <td>%s</td>
-                <td class="input"><input name="%s" maxlength="20" size="20"/></td>
+                <td class="input"><input name="%s" maxlength="10" size="10"/></td>
                 <td>%s</td>
             </tr>''' % (in_names[in_i], in_names[in_i], info_dict['inout'][in_names[in_i]]['unit'])
 
@@ -72,18 +84,20 @@ def generate_html(name):
 <script type="text/javascript" src="utils.js"></script>
 <script type="text/javascript" src="{name}.js"></script>
     '''
-
-# footer
-    html_out += '''
-
-    </body>
-    </html>'''
-
-# write to file
-    with open(name + '.html', 'w') as f_out:
-        f_out.write(html_out)
+    
+    return html_out
 
 if __name__ == '__main__':
-    names = ['ohm', 'cap_charge', 'cap_consumption', 'ind_charge']
+    import os
+    names = [f[:-3] for f in os.listdir('.') if f[-3:] == '.js']
+    names = [name for name in names if name not in ['utils']]
+    html_index = ''
     for name in names:
-        generate_html(name)
+        body = generate_form(name)
+        generate_html(name, body)
+        html_index += f'<a href="{name}.html">{name}</a><br />'
+
+    generate_html('index', html_index)
+
+
+        

@@ -1,0 +1,54 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>db20_converter</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+
+    <form oninput="
+A_dB.value = convert_si(A_dB_calc(parse_si(A.value))[0]);
+">
+        <table><caption>A_dB_calc</caption>
+
+            <tr>
+                <td>A</td>
+                <td class="input"><input name="A" maxlength="10" size="10"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>A_dB</td>
+                <td class="output"><output name="A_dB"></output></td>
+                <td>dB</td>
+            </tr>
+        </table>
+    </form>
+
+<form oninput="
+A.value = convert_si(A_calc(parse_si(A_dB.value))[0]);
+">
+        <table><caption>A_calc</caption>
+
+            <tr>
+                <td>A_dB</td>
+                <td class="input"><input name="A_dB" maxlength="10" size="10"/></td>
+                <td>dB</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td class="output"><output name="A"></output></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+
+
+<script type="text/javascript" src="utils.js"></script>
+<script type="text/javascript" src="db20_converter.js"></script>
+    
+
+    </body>
+    </html>
