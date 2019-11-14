@@ -14,7 +14,7 @@ def generate_html(name, body):
 
     <body>
 
-    '''
+'''
     html_out += body
 
 # footer
@@ -58,7 +58,7 @@ def generate_form(name):
             html_out += f'{out_names[out_i]}.value = convert_si({fun_name}({parse_si_str[:-1]})[{out_i}]);\n'
         html_out +='''">
         <table>'''
-        html_out += f'<caption>{fun_name}</caption>\n'
+        html_out += f'<caption><a href="{name}.js">{fun_name}</a></caption>\n'
 
         for in_i in range(len(in_names)):
             html_out += '''
@@ -95,7 +95,7 @@ if __name__ == '__main__':
     for name in names:
         body = generate_form(name)
         generate_html(name, body)
-        html_index += f'<a href="{name}.html">{name}</a><br />'
+        html_index += f'    <a href="{name}.html">{name}</a><br />\n'
 
     generate_html('index', html_index)
 

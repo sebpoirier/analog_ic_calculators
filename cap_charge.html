@@ -9,11 +9,11 @@
 
     <body>
 
-    <form oninput="
+<form oninput="
 V.value = convert_si(V_calc(parse_si(I.value),parse_si(t.value),parse_si(C.value))[0]);
 SR.value = convert_si(V_calc(parse_si(I.value),parse_si(t.value),parse_si(C.value))[1]);
 ">
-        <table><caption>V_calc</caption>
+        <table><caption><a href="cap_charge.js">V_calc</a></caption>
 
             <tr>
                 <td>I</td>
@@ -47,7 +47,7 @@ SR.value = convert_si(V_calc(parse_si(I.value),parse_si(t.value),parse_si(C.valu
 C.value = convert_si(C_calc(parse_si(I.value),parse_si(t.value),parse_si(V.value))[0]);
 SR.value = convert_si(C_calc(parse_si(I.value),parse_si(t.value),parse_si(V.value))[1]);
 ">
-        <table><caption>C_calc</caption>
+        <table><caption><a href="cap_charge.js">C_calc</a></caption>
 
             <tr>
                 <td>I</td>
@@ -81,7 +81,7 @@ SR.value = convert_si(C_calc(parse_si(I.value),parse_si(t.value),parse_si(V.valu
 I.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(t.value))[0]);
 SR.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(t.value))[1]);
 ">
-        <table><caption>I_calc</caption>
+        <table><caption><a href="cap_charge.js">I_calc</a></caption>
 
             <tr>
                 <td>C</td>
@@ -115,7 +115,7 @@ SR.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(t.valu
 t.value = convert_si(t_calc(parse_si(C.value),parse_si(V.value),parse_si(I.value))[0]);
 SR.value = convert_si(t_calc(parse_si(C.value),parse_si(V.value),parse_si(I.value))[1]);
 ">
-        <table><caption>t_calc</caption>
+        <table><caption><a href="cap_charge.js">t_calc</a></caption>
 
             <tr>
                 <td>C</td>

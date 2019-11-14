@@ -9,10 +9,10 @@
 
     <body>
 
-    <form oninput="
+<form oninput="
 A_dB.value = convert_si(A_dB_calc(parse_si(A.value))[0]);
 ">
-        <table><caption>A_dB_calc</caption>
+        <table><caption><a href="db20_converter.js">A_dB_calc</a></caption>
 
             <tr>
                 <td>A</td>
@@ -30,7 +30,7 @@ A_dB.value = convert_si(A_dB_calc(parse_si(A.value))[0]);
 <form oninput="
 A.value = convert_si(A_calc(parse_si(A_dB.value))[0]);
 ">
-        <table><caption>A_calc</caption>
+        <table><caption><a href="db20_converter.js">A_calc</a></caption>
 
             <tr>
                 <td>A_dB</td>

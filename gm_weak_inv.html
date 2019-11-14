@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>gm_weak_inv</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+
+<form oninput="
+gm.value = convert_si(gm_calc(parse_si(I.value),parse_si(n.value),parse_si(T.value))[0]);
+">
+        <table><caption><a href="gm_weak_inv.js">gm_calc</a></caption>
+
+            <tr>
+                <td>I</td>
+                <td class="input"><input name="I" maxlength="10" size="10"/></td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>n</td>
+                <td class="input"><input name="n" maxlength="10" size="10"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>T</td>
+                <td class="input"><input name="T" maxlength="10" size="10"/></td>
+                <td>deg. C</td>
+            </tr>
+            <tr>
+                <td>gm</td>
+                <td class="output"><output name="gm"></output></td>
+                <td>S</td>
+            </tr>
+        </table>
+    </form>
+
+
+<script type="text/javascript" src="utils.js"></script>
+<script type="text/javascript" src="gm_weak_inv.js"></script>
+    
+
+    </body>
+    </html>
