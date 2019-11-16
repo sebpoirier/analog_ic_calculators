@@ -43,23 +43,23 @@ def js_to_dict(name):
     out_findall = out_regex.findall(data)
 
 # dict generation
-    di = collections.OrderedDict()
-    di['info'] = json.loads(info_findall)
+    js_di = collections.OrderedDict()
+    js_di['info'] = json.loads(info_findall)
     for i in range(len(in_findall)):
         # Get parameters
         fun_name = in_findall[i][0]
 
-        di[fun_name] = {
+        js_di[fun_name] = {
             'ret_list': [x.strip() for x in out_findall[i].split(',')],
             'fun_dict': collections.OrderedDict(),
         }
         for item in in_findall[i][1].split(','):
             item_split = item.split('=')
             if len(item_split) == 2:
-                di[fun_name]['fun_dict'][item_split[0].strip()] = item_split[1].strip()
+                js_di[fun_name]['fun_dict'][item_split[0].strip()] = item_split[1].strip()
             else:
-                di[fun_name]['fun_dict'][item_split[0].strip()] = ''
-    return di
+                js_di[fun_name]['fun_dict'][item_split[0].strip()] = ''
+    return js_di
 
 def generate_form(name):
 # form
@@ -76,7 +76,7 @@ def generate_form(name):
         html_out += '<form oninput="\n'
         for out_i in range(len(out_names)):
             html_out += f'{out_names[out_i]}.value = convert_si({fun_name}({parse_si_str[:-1]})[{out_i}]);\n'
-        html_out +='''">
+        html_out += '''">
         <table>'''
         html_out += f'<caption><a href="{name}.js">{fun_name}</a></caption>\n'
 
@@ -84,7 +84,9 @@ def generate_form(name):
             html_out += f'''
             <tr>
                 <td>{in_name}</td>
-                <td class="input"><input name="{in_name}" value="{js_di[fun_name]['fun_dict'][in_name]}" maxlength="10" size="10"/></td>
+                <td class="input"><input name="{in_name}" 
+                    value="{js_di[fun_name]['fun_dict'][in_name]}" 
+                    maxlength="10" size="10"/></td>
                 <td>{js_di['info']['inout'][in_name]['unit']}</td>
             </tr>'''
 
@@ -100,7 +102,7 @@ def generate_form(name):
         </table>
     </form>\n\n'''
 
-    html_out +=f'''
+    html_out += f'''
 <script type="text/javascript" src="utils.js"></script>
 <script type="text/javascript" src="{name}.js"></script>
     '''
