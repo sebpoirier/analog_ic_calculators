@@ -3,7 +3,8 @@
     <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>adc_resolution</title>
+        <meta name="author" content="Sebastien Poirier">
+        <title>ADC resolution</title>
         <link href="style.css" rel="stylesheet" type="text/css">
     </head>
 
@@ -16,15 +17,15 @@ LSB.value = convert_si(lsb_calc(parse_si(ref.value),parse_si(n_bit.value))[0]);
 
             <tr>
                 <td>ref</td>
-                <td class="input"><input name="ref" 
-                    value="" 
+                <td class="input"><input name="ref"
+                    value=""
                     maxlength="10" size="10"/></td>
                 <td></td>
             </tr>
             <tr>
                 <td>n_bit</td>
-                <td class="input"><input name="n_bit" 
-                    value="" 
+                <td class="input"><input name="n_bit"
+                    value=""
                     maxlength="10" size="10"/></td>
                 <td></td>
             </tr>
@@ -43,15 +44,15 @@ ref.value = convert_si(ref_calc(parse_si(LSB.value),parse_si(n_bit.value))[0]);
 
             <tr>
                 <td>LSB</td>
-                <td class="input"><input name="LSB" 
-                    value="" 
+                <td class="input"><input name="LSB"
+                    value=""
                     maxlength="10" size="10"/></td>
                 <td></td>
             </tr>
             <tr>
                 <td>n_bit</td>
-                <td class="input"><input name="n_bit" 
-                    value="" 
+                <td class="input"><input name="n_bit"
+                    value=""
                     maxlength="10" size="10"/></td>
                 <td></td>
             </tr>
@@ -70,15 +71,15 @@ n_bit.value = convert_si(n_bit_calc(parse_si(ref.value),parse_si(LSB.value))[0])
 
             <tr>
                 <td>ref</td>
-                <td class="input"><input name="ref" 
-                    value="" 
+                <td class="input"><input name="ref"
+                    value=""
                     maxlength="10" size="10"/></td>
                 <td></td>
             </tr>
             <tr>
                 <td>LSB</td>
-                <td class="input"><input name="LSB" 
-                    value="" 
+                <td class="input"><input name="LSB"
+                    value=""
                     maxlength="10" size="10"/></td>
                 <td></td>
             </tr>

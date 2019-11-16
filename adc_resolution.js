@@ -3,7 +3,8 @@ var info = {
         "ref": {"unit": ""},
         "n_bit": {"unit": ""},
         "LSB": {"unit": ""}
-    }
+    },
+    "title": "ADC resolution"
 };
 
 function lsb_calc(ref, n_bit) {
