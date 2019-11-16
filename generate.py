@@ -28,7 +28,7 @@ def generate_html(name, body):
     with open(name + '.html', 'w') as f_out:
         f_out.write(html_out)
 
-def generate_form(name):
+def js_to_dict(name):
 # js extract
     with open(name + '.js', 'r') as js_in:
         data = js_in.read()
@@ -48,7 +48,7 @@ def generate_form(name):
     for i in range(len(in_findall)):
         # Get parameters
         fun_name = in_findall[i][0]
-        
+
         di[fun_name] = {
             'ret_list': [x.strip() for x in out_findall[i].split(',')],
             'fun_dict': collections.OrderedDict(),
@@ -56,18 +56,18 @@ def generate_form(name):
         for item in in_findall[i][1].split(','):
             item_split = item.split('=')
             if len(item_split) == 2:
-                di[fun_name]['fun_dict'][item_split[0]] = item_split[1]
+                di[fun_name]['fun_dict'][item_split[0].strip()] = item_split[1].strip()
             else:
-                di[fun_name]['fun_dict'][item_split[0]] = ''
-    js_di = di
+                di[fun_name]['fun_dict'][item_split[0].strip()] = ''
+    return di
 
-
+def generate_form(name):
 # form
     html_out = ''
-    for form_i in range(len(in_findall)):
-        fun_name = in_findall[form_i][0]
-        in_names = [x.strip() for x in in_findall[form_i][1].split(',')]
-        out_names = [x.strip() for x in out_findall[form_i].split(',')]
+    js_di = js_to_dict(name)
+    for fun_name in list(js_di.keys())[1:]:
+        in_names = js_di[fun_name]['fun_dict'].keys()
+        out_names = js_di[fun_name]['ret_list']
 
         parse_si_str = ''
         for item in in_names:
@@ -80,21 +80,21 @@ def generate_form(name):
         <table>'''
         html_out += f'<caption><a href="{name}.js">{fun_name}</a></caption>\n'
 
-        for in_i in range(len(in_names)):
-            html_out += '''
+        for in_name in in_names:
+            html_out += f'''
             <tr>
-                <td>%s</td>
-                <td class="input"><input name="%s" maxlength="10" size="10"/></td>
-                <td>%s</td>
-            </tr>''' % (in_names[in_i], in_names[in_i], js_di['info']['inout'][in_names[in_i]]['unit'])
+                <td>{in_name}</td>
+                <td class="input"><input name="{in_name}" value="{js_di[fun_name]['fun_dict'][in_name]}" maxlength="10" size="10"/></td>
+                <td>{js_di['info']['inout'][in_name]['unit']}</td>
+            </tr>'''
 
-        for out_i in range(len(out_names)):
-            html_out += '''
+        for out_name in  out_names:
+            html_out += f'''
             <tr>
-                <td>%s</td>
-                <td class="output"><output name="%s"></output></td>
-                <td>%s</td>
-            </tr>''' % (out_names[out_i], out_names[out_i], js_di['info']['inout'][out_names[out_i]]['unit'])
+                <td>{out_name}</td>
+                <td class="output"><output name="{out_name}"></output></td>
+                <td>{js_di['info']['inout'][out_name]['unit']}</td>
+            </tr>'''
 
         html_out += '''
         </table>
