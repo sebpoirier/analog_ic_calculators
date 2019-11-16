@@ -112,7 +112,7 @@ if __name__ == '__main__':
     import os
     js_fns = [f for f in os.listdir('.') if f[-3:] == '.js']
     js_fns = [js_fn for js_fn in js_fns if js_fn not in ['utils.js']]
-    html_index = ''
+    title_dict = {}
     for js_fn in js_fns:
         js_di = js_to_dict(js_fn)
         js_di['info']['js_fn'] = js_fn
@@ -122,7 +122,11 @@ if __name__ == '__main__':
         html_fn = js_fn[:-3] + '.html'
         html_title = js_di['info'].get('title', js_fn[:-3])
         generate_html(html_fn, html_title, body)
+        title_dict [html_fn] = html_title
 
-        html_index += f'    <a href="{html_fn}">{js_fn}</a><br />\n'
-
+# Generate index file.
+    s = [(k, title_dict[k]) for k in sorted(title_dict, key=title_dict.get)]
+    html_index = ''
+    for html_fn, html_title in s:
+        html_index += f'    <a href="{html_fn}">{html_title}</a><br />\n'
     generate_html('index.html', 'index', html_index)

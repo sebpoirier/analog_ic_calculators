@@ -5,7 +5,8 @@ var info = {
         "t": {"unit": "s"},
         "I": {"unit": "A"},
         "SR": {"unit": "V/s"}
-    }
+    },
+    "title": "Capacitor charge time"
 };
 
 function V_calc(I, t, C) {
