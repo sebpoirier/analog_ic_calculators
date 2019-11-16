@@ -1,5 +1,6 @@
 import re
 import json
+import collections
 
 def generate_html(name, body):
 # header
@@ -32,15 +33,34 @@ def generate_form(name):
     with open(name + '.js', 'r') as js_in:
         data = js_in.read()
 
+    info_regex = re.compile(r'var info = ({.*});')
+    info_findall = info_regex.findall(data.replace('\n', ' '))[0]
+
     in_regex = re.compile(r'function\s+(\w+)\((.+)\)')
     in_findall = in_regex.findall(data)
 
     out_regex = re.compile(r'return\s+\(\[(.+)\]\)')
     out_findall = out_regex.findall(data)
 
-    info_regex = re.compile(r'var info = ({.*});')
-    info_findall = info_regex.findall(data.replace('\n', ' '))[0]
-    info_dict = json.loads(info_findall)
+# dict generation
+    di = collections.OrderedDict()
+    di['info'] = json.loads(info_findall)
+    for i in range(len(in_findall)):
+        # Get parameters
+        fun_name = in_findall[i][0]
+        
+        di[fun_name] = {
+            'ret_list': [x.strip() for x in out_findall[i].split(',')],
+            'fun_dict': collections.OrderedDict(),
+        }
+        for item in in_findall[i][1].split(','):
+            item_split = item.split('=')
+            if len(item_split) == 2:
+                di[fun_name]['fun_dict'][item_split[0]] = item_split[1]
+            else:
+                di[fun_name]['fun_dict'][item_split[0]] = ''
+    js_di = di
+
 
 # form
     html_out = ''
@@ -66,7 +86,7 @@ def generate_form(name):
                 <td>%s</td>
                 <td class="input"><input name="%s" maxlength="10" size="10"/></td>
                 <td>%s</td>
-            </tr>''' % (in_names[in_i], in_names[in_i], info_dict['inout'][in_names[in_i]]['unit'])
+            </tr>''' % (in_names[in_i], in_names[in_i], js_di['info']['inout'][in_names[in_i]]['unit'])
 
         for out_i in range(len(out_names)):
             html_out += '''
@@ -74,7 +94,7 @@ def generate_form(name):
                 <td>%s</td>
                 <td class="output"><output name="%s"></output></td>
                 <td>%s</td>
-            </tr>''' % (out_names[out_i], out_names[out_i], info_dict['inout'][out_names[out_i]]['unit'])
+            </tr>''' % (out_names[out_i], out_names[out_i], js_di['info']['inout'][out_names[out_i]]['unit'])
 
         html_out += '''
         </table>
@@ -84,7 +104,7 @@ def generate_form(name):
 <script type="text/javascript" src="utils.js"></script>
 <script type="text/javascript" src="{name}.js"></script>
     '''
-    
+
     return html_out
 
 if __name__ == '__main__':
@@ -98,6 +118,3 @@ if __name__ == '__main__':
         html_index += f'    <a href="{name}.html">{name}</a><br />\n'
 
     generate_html('index', html_index)
-
-
-        
