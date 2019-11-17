@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>{{ js_di.info.title }}</title>        
+</head>
+
+<body>
+{% for fun_name in js_di if fun_name != 'info' %}
+    <form oninput="
+    V.value = convert_si(V_calc(parse_si(R.value),parse_si(I.value))[0]);
+    ">
+        <table><caption><a href="{{ js_di.info.js_fn }}">{{ fun_name }}</a></caption>
+
+    {% for in_name in js_di[fun_name].fun_dict %}
+            <tr>
+                <td>{{ in_name }}</td>
+                <td class="input"><input name="{{ in_name }}"
+                    value=""
+                    maxlength="10" size="10"/></td>
+                <td>{{ js_di['info']['inout'][in_name]['unit'] }}</td>
+            </tr>
+    {% endfor %} 
+
+    {% for out_name in js_di[fun_name].ret_list %}
+            <tr>
+                <td>{{ out_name }}</td>
+                <td class="output"><output name="{{ out_name }}"></output></td>
+                <td>{{ js_di['info']['inout'][out_name]['unit'] }}</td>
+            </tr>
+    {% endfor %} 
+
+        </table>
+    </form>
+{% endfor %} 
+<script type="text/javascript" src="{{ js_di.info.js_fn }}"></script>
+<script type="text/javascript" src="utils.js"></script>
+</body>
+</html>
