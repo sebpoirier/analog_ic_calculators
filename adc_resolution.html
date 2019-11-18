@@ -1,20 +1,23 @@
+<!DOCTYPE html>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="author" content="Sebastien Poirier">
-        <title>ADC resolution</title>
-        <link href="style.css" rel="stylesheet" type="text/css">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>ADC resolution</title>        
+</head>
 
-    <body>
+<body>
 
-<form oninput="
-LSB.value = convert_si(lsb_calc(parse_si(ref.value),parse_si(n_bit.value))[0]);
-">
+    <form oninput="
+    
+          LSB.value = convert_si(lsb_calc(parse_si(ref.value),parse_si(n_bit.value))[0]);
+     
+    ">
         <table><caption><a href="adc_resolution.js">lsb_calc</a></caption>
 
+    
             <tr>
                 <td>ref</td>
                 <td class="input"><input name="ref"
@@ -22,6 +25,7 @@ LSB.value = convert_si(lsb_calc(parse_si(ref.value),parse_si(n_bit.value))[0]);
                     maxlength="10" size="10"/></td>
                 <td></td>
             </tr>
+    
             <tr>
                 <td>n_bit</td>
                 <td class="input"><input name="n_bit"
@@ -29,19 +33,27 @@ LSB.value = convert_si(lsb_calc(parse_si(ref.value),parse_si(n_bit.value))[0]);
                     maxlength="10" size="10"/></td>
                 <td></td>
             </tr>
+     
+
+    
             <tr>
                 <td>LSB</td>
                 <td class="output"><output name="LSB"></output></td>
                 <td></td>
             </tr>
+     
+
         </table>
     </form>
 
-<form oninput="
-ref.value = convert_si(ref_calc(parse_si(LSB.value),parse_si(n_bit.value))[0]);
-">
+    <form oninput="
+    
+          ref.value = convert_si(ref_calc(parse_si(LSB.value),parse_si(n_bit.value))[0]);
+     
+    ">
         <table><caption><a href="adc_resolution.js">ref_calc</a></caption>
 
+    
             <tr>
                 <td>LSB</td>
                 <td class="input"><input name="LSB"
@@ -49,6 +61,7 @@ ref.value = convert_si(ref_calc(parse_si(LSB.value),parse_si(n_bit.value))[0]);
                     maxlength="10" size="10"/></td>
                 <td></td>
             </tr>
+    
             <tr>
                 <td>n_bit</td>
                 <td class="input"><input name="n_bit"
@@ -56,19 +69,27 @@ ref.value = convert_si(ref_calc(parse_si(LSB.value),parse_si(n_bit.value))[0]);
                     maxlength="10" size="10"/></td>
                 <td></td>
             </tr>
+     
+
+    
             <tr>
                 <td>ref</td>
                 <td class="output"><output name="ref"></output></td>
                 <td></td>
             </tr>
+     
+
         </table>
     </form>
 
-<form oninput="
-n_bit.value = convert_si(n_bit_calc(parse_si(ref.value),parse_si(LSB.value))[0]);
-">
+    <form oninput="
+    
+          n_bit.value = convert_si(n_bit_calc(parse_si(ref.value),parse_si(LSB.value))[0]);
+     
+    ">
         <table><caption><a href="adc_resolution.js">n_bit_calc</a></caption>
 
+    
             <tr>
                 <td>ref</td>
                 <td class="input"><input name="ref"
@@ -76,6 +97,7 @@ n_bit.value = convert_si(n_bit_calc(parse_si(ref.value),parse_si(LSB.value))[0])
                     maxlength="10" size="10"/></td>
                 <td></td>
             </tr>
+    
             <tr>
                 <td>LSB</td>
                 <td class="input"><input name="LSB"
@@ -83,18 +105,21 @@ n_bit.value = convert_si(n_bit_calc(parse_si(ref.value),parse_si(LSB.value))[0])
                     maxlength="10" size="10"/></td>
                 <td></td>
             </tr>
+     
+
+    
             <tr>
                 <td>n_bit</td>
                 <td class="output"><output name="n_bit"></output></td>
                 <td></td>
             </tr>
+     
+
         </table>
     </form>
-
-
-<script type="text/javascript" src="utils.js"></script>
+ 
 <script type="text/javascript" src="adc_resolution.js"></script>
-    
+<script type="text/javascript" src="utils.js"></script>
 
-    </body>
-    </html>
+</body>
+</html>

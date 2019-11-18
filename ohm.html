@@ -1,21 +1,25 @@
+<!DOCTYPE html>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="author" content="Sebastien Poirier">
-        <title>ohm</title>
-        <link href="style.css" rel="stylesheet" type="text/css">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>ohm</title>        
+</head>
 
-    <body>
+<body>
 
-<form oninput="
-V.value = convert_si(V_calc(parse_si(R.value),parse_si(I.value))[0]);
-P.value = convert_si(V_calc(parse_si(R.value),parse_si(I.value))[1]);
-">
+    <form oninput="
+    
+          V.value = convert_si(V_calc(parse_si(R.value),parse_si(I.value))[0]);
+    
+          P.value = convert_si(V_calc(parse_si(R.value),parse_si(I.value))[1]);
+     
+    ">
         <table><caption><a href="ohm.js">V_calc</a></caption>
 
+    
             <tr>
                 <td>R</td>
                 <td class="input"><input name="R"
@@ -23,6 +27,7 @@ P.value = convert_si(V_calc(parse_si(R.value),parse_si(I.value))[1]);
                     maxlength="10" size="10"/></td>
                 <td>Ohm</td>
             </tr>
+    
             <tr>
                 <td>I</td>
                 <td class="input"><input name="I"
@@ -30,25 +35,35 @@ P.value = convert_si(V_calc(parse_si(R.value),parse_si(I.value))[1]);
                     maxlength="10" size="10"/></td>
                 <td>A</td>
             </tr>
+     
+
+    
             <tr>
                 <td>V</td>
                 <td class="output"><output name="V"></output></td>
                 <td>V</td>
             </tr>
+    
             <tr>
                 <td>P</td>
                 <td class="output"><output name="P"></output></td>
                 <td>W</td>
             </tr>
+     
+
         </table>
     </form>
 
-<form oninput="
-R.value = convert_si(R_calc(parse_si(V.value),parse_si(I.value))[0]);
-P.value = convert_si(R_calc(parse_si(V.value),parse_si(I.value))[1]);
-">
+    <form oninput="
+    
+          R.value = convert_si(R_calc(parse_si(V.value),parse_si(I.value))[0]);
+    
+          P.value = convert_si(R_calc(parse_si(V.value),parse_si(I.value))[1]);
+     
+    ">
         <table><caption><a href="ohm.js">R_calc</a></caption>
 
+    
             <tr>
                 <td>V</td>
                 <td class="input"><input name="V"
@@ -56,6 +71,7 @@ P.value = convert_si(R_calc(parse_si(V.value),parse_si(I.value))[1]);
                     maxlength="10" size="10"/></td>
                 <td>V</td>
             </tr>
+    
             <tr>
                 <td>I</td>
                 <td class="input"><input name="I"
@@ -63,25 +79,35 @@ P.value = convert_si(R_calc(parse_si(V.value),parse_si(I.value))[1]);
                     maxlength="10" size="10"/></td>
                 <td>A</td>
             </tr>
+     
+
+    
             <tr>
                 <td>R</td>
                 <td class="output"><output name="R"></output></td>
                 <td>Ohm</td>
             </tr>
+    
             <tr>
                 <td>P</td>
                 <td class="output"><output name="P"></output></td>
                 <td>W</td>
             </tr>
+     
+
         </table>
     </form>
 
-<form oninput="
-I.value = convert_si(I_calc(parse_si(V.value),parse_si(R.value))[0]);
-P.value = convert_si(I_calc(parse_si(V.value),parse_si(R.value))[1]);
-">
+    <form oninput="
+    
+          I.value = convert_si(I_calc(parse_si(V.value),parse_si(R.value))[0]);
+    
+          P.value = convert_si(I_calc(parse_si(V.value),parse_si(R.value))[1]);
+     
+    ">
         <table><caption><a href="ohm.js">I_calc</a></caption>
 
+    
             <tr>
                 <td>V</td>
                 <td class="input"><input name="V"
@@ -89,6 +115,7 @@ P.value = convert_si(I_calc(parse_si(V.value),parse_si(R.value))[1]);
                     maxlength="10" size="10"/></td>
                 <td>V</td>
             </tr>
+    
             <tr>
                 <td>R</td>
                 <td class="input"><input name="R"
@@ -96,23 +123,27 @@ P.value = convert_si(I_calc(parse_si(V.value),parse_si(R.value))[1]);
                     maxlength="10" size="10"/></td>
                 <td>Ohm</td>
             </tr>
+     
+
+    
             <tr>
                 <td>I</td>
                 <td class="output"><output name="I"></output></td>
                 <td>A</td>
             </tr>
+    
             <tr>
                 <td>P</td>
                 <td class="output"><output name="P"></output></td>
                 <td>W</td>
             </tr>
+     
+
         </table>
     </form>
-
-
-<script type="text/javascript" src="utils.js"></script>
+ 
 <script type="text/javascript" src="ohm.js"></script>
-    
+<script type="text/javascript" src="utils.js"></script>
 
-    </body>
-    </html>
+</body>
+</html>

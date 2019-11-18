@@ -1,21 +1,25 @@
+<!DOCTYPE html>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="author" content="Sebastien Poirier">
-        <title>cap_consumption</title>
-        <link href="style.css" rel="stylesheet" type="text/css">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>cap_consumption</title>        
+</head>
 
-    <body>
+<body>
 
-<form oninput="
-I.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(f.value))[0]);
-P.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(f.value))[1]);
-">
+    <form oninput="
+    
+          I.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(f.value))[0]);
+    
+          P.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(f.value))[1]);
+     
+    ">
         <table><caption><a href="cap_consumption.js">I_calc</a></caption>
 
+    
             <tr>
                 <td>C</td>
                 <td class="input"><input name="C"
@@ -23,6 +27,7 @@ P.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(f.value
                     maxlength="10" size="10"/></td>
                 <td>F</td>
             </tr>
+    
             <tr>
                 <td>V</td>
                 <td class="input"><input name="V"
@@ -30,6 +35,7 @@ P.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(f.value
                     maxlength="10" size="10"/></td>
                 <td>V</td>
             </tr>
+    
             <tr>
                 <td>f</td>
                 <td class="input"><input name="f"
@@ -37,23 +43,27 @@ P.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(f.value
                     maxlength="10" size="10"/></td>
                 <td>Hz</td>
             </tr>
+     
+
+    
             <tr>
                 <td>I</td>
                 <td class="output"><output name="I"></output></td>
                 <td>A</td>
             </tr>
+    
             <tr>
                 <td>P</td>
                 <td class="output"><output name="P"></output></td>
                 <td>W</td>
             </tr>
+     
+
         </table>
     </form>
-
-
-<script type="text/javascript" src="utils.js"></script>
+ 
 <script type="text/javascript" src="cap_consumption.js"></script>
-    
+<script type="text/javascript" src="utils.js"></script>
 
-    </body>
-    </html>
+</body>
+</html>

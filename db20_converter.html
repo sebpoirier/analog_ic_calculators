@@ -1,20 +1,23 @@
+<!DOCTYPE html>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="author" content="Sebastien Poirier">
-        <title>db20_converter</title>
-        <link href="style.css" rel="stylesheet" type="text/css">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>db20_converter</title>        
+</head>
 
-    <body>
+<body>
 
-<form oninput="
-A_dB.value = convert_si(A_dB_calc(parse_si(A.value))[0]);
-">
+    <form oninput="
+    
+          A_dB.value = convert_si(A_dB_calc(parse_si(A.value))[0]);
+     
+    ">
         <table><caption><a href="db20_converter.js">A_dB_calc</a></caption>
 
+    
             <tr>
                 <td>A</td>
                 <td class="input"><input name="A"
@@ -22,19 +25,27 @@ A_dB.value = convert_si(A_dB_calc(parse_si(A.value))[0]);
                     maxlength="10" size="10"/></td>
                 <td></td>
             </tr>
+     
+
+    
             <tr>
                 <td>A_dB</td>
                 <td class="output"><output name="A_dB"></output></td>
                 <td>dB</td>
             </tr>
+     
+
         </table>
     </form>
 
-<form oninput="
-A.value = convert_si(A_calc(parse_si(A_dB.value))[0]);
-">
+    <form oninput="
+    
+          A.value = convert_si(A_calc(parse_si(A_dB.value))[0]);
+     
+    ">
         <table><caption><a href="db20_converter.js">A_calc</a></caption>
 
+    
             <tr>
                 <td>A_dB</td>
                 <td class="input"><input name="A_dB"
@@ -42,18 +53,21 @@ A.value = convert_si(A_calc(parse_si(A_dB.value))[0]);
                     maxlength="10" size="10"/></td>
                 <td>dB</td>
             </tr>
+     
+
+    
             <tr>
                 <td>A</td>
                 <td class="output"><output name="A"></output></td>
                 <td></td>
             </tr>
+     
+
         </table>
     </form>
-
-
-<script type="text/javascript" src="utils.js"></script>
+ 
 <script type="text/javascript" src="db20_converter.js"></script>
-    
+<script type="text/javascript" src="utils.js"></script>
 
-    </body>
-    </html>
+</body>
+</html>

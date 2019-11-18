@@ -1,20 +1,23 @@
+<!DOCTYPE html>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="author" content="Sebastien Poirier">
-        <title>ind_charge</title>
-        <link href="style.css" rel="stylesheet" type="text/css">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>ind_charge</title>        
+</head>
 
-    <body>
+<body>
 
-<form oninput="
-V.value = convert_si(V_calc(parse_si(L.value),parse_si(I.value),parse_si(t.value))[0]);
-">
+    <form oninput="
+    
+          V.value = convert_si(V_calc(parse_si(L.value),parse_si(I.value),parse_si(t.value))[0]);
+     
+    ">
         <table><caption><a href="ind_charge.js">V_calc</a></caption>
 
+    
             <tr>
                 <td>L</td>
                 <td class="input"><input name="L"
@@ -22,6 +25,7 @@ V.value = convert_si(V_calc(parse_si(L.value),parse_si(I.value),parse_si(t.value
                     maxlength="10" size="10"/></td>
                 <td>H</td>
             </tr>
+    
             <tr>
                 <td>I</td>
                 <td class="input"><input name="I"
@@ -29,6 +33,7 @@ V.value = convert_si(V_calc(parse_si(L.value),parse_si(I.value),parse_si(t.value
                     maxlength="10" size="10"/></td>
                 <td>A</td>
             </tr>
+    
             <tr>
                 <td>t</td>
                 <td class="input"><input name="t"
@@ -36,19 +41,27 @@ V.value = convert_si(V_calc(parse_si(L.value),parse_si(I.value),parse_si(t.value
                     maxlength="10" size="10"/></td>
                 <td>s</td>
             </tr>
+     
+
+    
             <tr>
                 <td>V</td>
                 <td class="output"><output name="V"></output></td>
                 <td>V</td>
             </tr>
+     
+
         </table>
     </form>
 
-<form oninput="
-t.value = convert_si(t_calc(parse_si(L.value),parse_si(I.value),parse_si(V.value))[0]);
-">
+    <form oninput="
+    
+          t.value = convert_si(t_calc(parse_si(L.value),parse_si(I.value),parse_si(V.value))[0]);
+     
+    ">
         <table><caption><a href="ind_charge.js">t_calc</a></caption>
 
+    
             <tr>
                 <td>L</td>
                 <td class="input"><input name="L"
@@ -56,6 +69,7 @@ t.value = convert_si(t_calc(parse_si(L.value),parse_si(I.value),parse_si(V.value
                     maxlength="10" size="10"/></td>
                 <td>H</td>
             </tr>
+    
             <tr>
                 <td>I</td>
                 <td class="input"><input name="I"
@@ -63,6 +77,7 @@ t.value = convert_si(t_calc(parse_si(L.value),parse_si(I.value),parse_si(V.value
                     maxlength="10" size="10"/></td>
                 <td>A</td>
             </tr>
+    
             <tr>
                 <td>V</td>
                 <td class="input"><input name="V"
@@ -70,19 +85,27 @@ t.value = convert_si(t_calc(parse_si(L.value),parse_si(I.value),parse_si(V.value
                     maxlength="10" size="10"/></td>
                 <td>V</td>
             </tr>
+     
+
+    
             <tr>
                 <td>t</td>
                 <td class="output"><output name="t"></output></td>
                 <td>s</td>
             </tr>
+     
+
         </table>
     </form>
 
-<form oninput="
-L.value = convert_si(L_calc(parse_si(V.value),parse_si(t.value),parse_si(I.value))[0]);
-">
+    <form oninput="
+    
+          L.value = convert_si(L_calc(parse_si(V.value),parse_si(t.value),parse_si(I.value))[0]);
+     
+    ">
         <table><caption><a href="ind_charge.js">L_calc</a></caption>
 
+    
             <tr>
                 <td>V</td>
                 <td class="input"><input name="V"
@@ -90,6 +113,7 @@ L.value = convert_si(L_calc(parse_si(V.value),parse_si(t.value),parse_si(I.value
                     maxlength="10" size="10"/></td>
                 <td>V</td>
             </tr>
+    
             <tr>
                 <td>t</td>
                 <td class="input"><input name="t"
@@ -97,6 +121,7 @@ L.value = convert_si(L_calc(parse_si(V.value),parse_si(t.value),parse_si(I.value
                     maxlength="10" size="10"/></td>
                 <td>s</td>
             </tr>
+    
             <tr>
                 <td>I</td>
                 <td class="input"><input name="I"
@@ -104,19 +129,27 @@ L.value = convert_si(L_calc(parse_si(V.value),parse_si(t.value),parse_si(I.value
                     maxlength="10" size="10"/></td>
                 <td>A</td>
             </tr>
+     
+
+    
             <tr>
                 <td>L</td>
                 <td class="output"><output name="L"></output></td>
                 <td>H</td>
             </tr>
+     
+
         </table>
     </form>
 
-<form oninput="
-I.value = convert_si(I_calc(parse_si(V.value),parse_si(t.value),parse_si(L.value))[0]);
-">
+    <form oninput="
+    
+          I.value = convert_si(I_calc(parse_si(V.value),parse_si(t.value),parse_si(L.value))[0]);
+     
+    ">
         <table><caption><a href="ind_charge.js">I_calc</a></caption>
 
+    
             <tr>
                 <td>V</td>
                 <td class="input"><input name="V"
@@ -124,6 +157,7 @@ I.value = convert_si(I_calc(parse_si(V.value),parse_si(t.value),parse_si(L.value
                     maxlength="10" size="10"/></td>
                 <td>V</td>
             </tr>
+    
             <tr>
                 <td>t</td>
                 <td class="input"><input name="t"
@@ -131,6 +165,7 @@ I.value = convert_si(I_calc(parse_si(V.value),parse_si(t.value),parse_si(L.value
                     maxlength="10" size="10"/></td>
                 <td>s</td>
             </tr>
+    
             <tr>
                 <td>L</td>
                 <td class="input"><input name="L"
@@ -138,18 +173,21 @@ I.value = convert_si(I_calc(parse_si(V.value),parse_si(t.value),parse_si(L.value
                     maxlength="10" size="10"/></td>
                 <td>H</td>
             </tr>
+     
+
+    
             <tr>
                 <td>I</td>
                 <td class="output"><output name="I"></output></td>
                 <td>A</td>
             </tr>
+     
+
         </table>
     </form>
-
-
-<script type="text/javascript" src="utils.js"></script>
+ 
 <script type="text/javascript" src="ind_charge.js"></script>
-    
+<script type="text/javascript" src="utils.js"></script>
 
-    </body>
-    </html>
+</body>
+</html>

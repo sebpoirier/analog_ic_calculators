@@ -11,7 +11,9 @@
 <body>
 {% for fun_name in js_di if fun_name != 'info' %}
     <form oninput="
-    V.value = convert_si(V_calc(parse_si(R.value),parse_si(I.value))[0]);
+    {% for out_name in js_di[fun_name].ret_list %}
+          {{ out_name }}.value = convert_si({{ fun_name }}({% for in_name in js_di[fun_name].fun_dict %}parse_si({{in_name}}.value){{ "," if not loop.last else "" }}{% endfor %})[{{ loop.index0}}]);
+    {% endfor %} 
     ">
         <table><caption><a href="{{ js_di.info.js_fn }}">{{ fun_name }}</a></caption>
 
@@ -38,5 +40,6 @@
 {% endfor %} 
 <script type="text/javascript" src="{{ js_di.info.js_fn }}"></script>
 <script type="text/javascript" src="utils.js"></script>
+
 </body>
 </html>
