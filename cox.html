@@ -10,9 +10,11 @@
 
 <body>
 
+
     <form oninput="
     
-          C_ox.value = convert_si(C_ox_calc(parse_si(t_ox.value))[0]);
+        C_ox.value = convert_si(C_ox_calc(
+          parse_si(t_ox.value))[0]);
      
     ">
         <table><caption><a href="cox.js">C_ox_calc</a></caption>
@@ -40,9 +42,11 @@
 
     <form oninput="
     
-          C.value = convert_si(C_calc(parse_si(t_ox.value),parse_si(w.value),parse_si(l.value))[0]);
+        C.value = convert_si(C_calc(
+          parse_si(t_ox.value),parse_si(w.value),parse_si(l.value))[0]);
     
-          area.value = convert_si(C_calc(parse_si(t_ox.value),parse_si(w.value),parse_si(l.value))[1]);
+        area.value = convert_si(C_calc(
+          parse_si(t_ox.value),parse_si(w.value),parse_si(l.value))[1]);
      
     ">
         <table><caption><a href="cox.js">C_calc</a></caption>
@@ -92,6 +96,7 @@
  
 <script type="text/javascript" src="cox.js"></script>
 <script type="text/javascript" src="utils.js"></script>
+
 
 </body>
 </html>

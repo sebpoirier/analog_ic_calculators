@@ -10,11 +10,14 @@
 
 <body>
 
+
     <form oninput="
     
-          V.value = convert_si(V_calc(parse_si(R.value),parse_si(I.value))[0]);
+        V.value = convert_si(V_calc(
+          parse_si(R.value),parse_si(I.value))[0]);
     
-          P.value = convert_si(V_calc(parse_si(R.value),parse_si(I.value))[1]);
+        P.value = convert_si(V_calc(
+          parse_si(R.value),parse_si(I.value))[1]);
      
     ">
         <table><caption><a href="ohm.js">V_calc</a></caption>
@@ -56,9 +59,11 @@
 
     <form oninput="
     
-          R.value = convert_si(R_calc(parse_si(V.value),parse_si(I.value))[0]);
+        R.value = convert_si(R_calc(
+          parse_si(V.value),parse_si(I.value))[0]);
     
-          P.value = convert_si(R_calc(parse_si(V.value),parse_si(I.value))[1]);
+        P.value = convert_si(R_calc(
+          parse_si(V.value),parse_si(I.value))[1]);
      
     ">
         <table><caption><a href="ohm.js">R_calc</a></caption>
@@ -100,9 +105,11 @@
 
     <form oninput="
     
-          I.value = convert_si(I_calc(parse_si(V.value),parse_si(R.value))[0]);
+        I.value = convert_si(I_calc(
+          parse_si(V.value),parse_si(R.value))[0]);
     
-          P.value = convert_si(I_calc(parse_si(V.value),parse_si(R.value))[1]);
+        P.value = convert_si(I_calc(
+          parse_si(V.value),parse_si(R.value))[1]);
      
     ">
         <table><caption><a href="ohm.js">I_calc</a></caption>
@@ -144,6 +151,7 @@
  
 <script type="text/javascript" src="ohm.js"></script>
 <script type="text/javascript" src="utils.js"></script>
+
 
 </body>
 </html>

@@ -10,11 +10,14 @@
 
 <body>
 
+
     <form oninput="
     
-          I.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(f.value))[0]);
+        I.value = convert_si(I_calc(
+          parse_si(C.value),parse_si(V.value),parse_si(f.value))[0]);
     
-          P.value = convert_si(I_calc(parse_si(C.value),parse_si(V.value),parse_si(f.value))[1]);
+        P.value = convert_si(I_calc(
+          parse_si(C.value),parse_si(V.value),parse_si(f.value))[1]);
      
     ">
         <table><caption><a href="cap_consumption.js">I_calc</a></caption>
@@ -64,6 +67,7 @@
  
 <script type="text/javascript" src="cap_consumption.js"></script>
 <script type="text/javascript" src="utils.js"></script>
+
 
 </body>
 </html>

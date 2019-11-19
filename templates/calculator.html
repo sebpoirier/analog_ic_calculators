@@ -1,18 +1,15 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="author" content="Sebastien Poirier">
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <title>{{ js_di.info.title }}</title>        
-</head>
+{% block title %}{{ js_di.info.title }}{% endblock %}
 
-<body>
+{% block content %}
 {% for fun_name in js_di if fun_name != 'info' %}
     <form oninput="
     {% for out_name in js_di[fun_name].ret_list %}
-          {{ out_name }}.value = convert_si({{ fun_name }}({% for in_name in js_di[fun_name].fun_dict %}parse_si({{in_name}}.value){{ "," if not loop.last else "" }}{% endfor %})[{{ loop.index0}}]);
+        {{ out_name }}.value = convert_si({{ fun_name }}(
+          {% for in_name in js_di[fun_name].fun_dict -%}
+            parse_si({{in_name}}.value){{ "," if not loop.last else "" }}
+        {%- endfor %})[{{ loop.index0}}]);
     {% endfor %} 
     ">
         <table><caption><a href="{{ js_di.info.js_fn }}">{{ fun_name }}</a></caption>
@@ -41,5 +38,4 @@
 <script type="text/javascript" src="{{ js_di.info.js_fn }}"></script>
 <script type="text/javascript" src="utils.js"></script>
 
-</body>
-</html>
+{% endblock %}

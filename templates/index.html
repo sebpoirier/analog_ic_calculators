@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}index{% endblock %}
+
+{% block content %}
+{% for key, value in title_tuple -%}
+    <a href="{{key}}">{{value}}</a><br />
+{% endfor %} 
+{% endblock %}

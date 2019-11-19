@@ -10,9 +10,11 @@
 
 <body>
 
+
     <form oninput="
     
-          LSB.value = convert_si(lsb_calc(parse_si(ref.value),parse_si(n_bit.value))[0]);
+        LSB.value = convert_si(lsb_calc(
+          parse_si(ref.value),parse_si(n_bit.value))[0]);
      
     ">
         <table><caption><a href="adc_resolution.js">lsb_calc</a></caption>
@@ -48,7 +50,8 @@
 
     <form oninput="
     
-          ref.value = convert_si(ref_calc(parse_si(LSB.value),parse_si(n_bit.value))[0]);
+        ref.value = convert_si(ref_calc(
+          parse_si(LSB.value),parse_si(n_bit.value))[0]);
      
     ">
         <table><caption><a href="adc_resolution.js">ref_calc</a></caption>
@@ -84,7 +87,8 @@
 
     <form oninput="
     
-          n_bit.value = convert_si(n_bit_calc(parse_si(ref.value),parse_si(LSB.value))[0]);
+        n_bit.value = convert_si(n_bit_calc(
+          parse_si(ref.value),parse_si(LSB.value))[0]);
      
     ">
         <table><caption><a href="adc_resolution.js">n_bit_calc</a></caption>
@@ -120,6 +124,7 @@
  
 <script type="text/javascript" src="adc_resolution.js"></script>
 <script type="text/javascript" src="utils.js"></script>
+
 
 </body>
 </html>

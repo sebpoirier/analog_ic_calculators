@@ -10,9 +10,11 @@
 
 <body>
 
+
     <form oninput="
     
-          gm.value = convert_si(gm_calc(parse_si(I.value),parse_si(n.value),parse_si(T.value))[0]);
+        gm.value = convert_si(gm_calc(
+          parse_si(I.value),parse_si(n.value),parse_si(T.value))[0]);
      
     ">
         <table><caption><a href="gm_weak_inv.js">gm_calc</a></caption>
@@ -56,6 +58,7 @@
  
 <script type="text/javascript" src="gm_weak_inv.js"></script>
 <script type="text/javascript" src="utils.js"></script>
+
 
 </body>
 </html>

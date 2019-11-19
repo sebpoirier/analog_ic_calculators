@@ -40,9 +40,9 @@ def js_to_dict(fn_js):
 
     return js_di
 
-# jinja
+# calculators
 env = Environment(loader=PackageLoader('main', 'templates'))
-test_template = env.get_template('test.html')
+calculator_template = env.get_template('calculator.html')
 
 js_fns = [f for f in os.listdir('.') if f[-3:] == '.js']
 js_fns = [js_fn for js_fn in js_fns if js_fn not in ['utils.js']]
@@ -50,8 +50,15 @@ title_dict = {}
 for js_fn in js_fns:
     js_di = js_to_dict(js_fn)
 
-    test_html = test_template.render(js_di=js_di)
+    calculator_html = calculator_template.render(js_di=js_di)
     html_fn = js_fn[:-3] + '.html'
+    title_dict[html_fn] = js_di['info']['title']
     with open(html_fn, 'w') as f_out:
-        f_out.write(test_html)
+        f_out.write(calculator_html)
 
+# index
+index_template = env.get_template('index.html')
+title_tuple = [(k, title_dict[k]) for k in sorted(title_dict, key=title_dict.get)]
+index_html = index_template.render(title_tuple=title_tuple)
+with open('index.html', 'w') as f_out:
+    f_out.write(index_html)
