@@ -14,11 +14,11 @@
     ">
         <table><caption><a href="{{ js_di.info.js_fn }}">{{ fun_name }}</a></caption>
 
-    {% for in_name in js_di[fun_name].fun_dict %}
+    {% for in_name, in_name_value in js_di[fun_name].fun_dict.items() %}
             <tr>
                 <td>{{ in_name }}</td>
                 <td class="input"><input name="{{ in_name }}"
-                    value=""
+                    value="{{ in_name_value }}"
                     maxlength="10" size="10"/></td>
                 <td>{{ js_di['info']['inout'][in_name]['unit'] }}</td>
             </tr>
