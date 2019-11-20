@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="favicon.ico" />
+    <title>gm_strong_inv</title>        
+</head>
+
+<body>
+
+
+    <form oninput="
+    
+        gm.value = convert_si(gm_calc(
+          parse_si(I.value),parse_si(V_ov.value))[0]);
+    
+        Beta.value = convert_si(gm_calc(
+          parse_si(I.value),parse_si(V_ov.value))[1]);
+     
+    ">
+        <table><caption><a href="gm_strong_inv.js">gm_calc</a></caption>
+
+    
+            <tr>
+                <td>I</td>
+                <td class="input"><input name="I"
+                    value=""
+                    maxlength="10" size="10"/></td>
+                <td>A</td>
+            </tr>
+    
+            <tr>
+                <td>V_ov</td>
+                <td class="input"><input name="V_ov"
+                    value=""
+                    maxlength="10" size="10"/></td>
+                <td>V</td>
+            </tr>
+     
+
+    
+            <tr>
+                <td>gm</td>
+                <td class="output"><output name="gm"></output></td>
+                <td>S</td>
+            </tr>
+    
+            <tr>
+                <td>Beta</td>
+                <td class="output"><output name="Beta"></output></td>
+                <td>A/(V*V)</td>
+            </tr>
+     
+
+        </table>
+    </form>
+ 
+<script type="text/javascript" src="gm_strong_inv.js"></script>
+<script type="text/javascript" src="utils.js"></script>
+
+
+</body>
+</html>
