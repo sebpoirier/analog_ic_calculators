@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="favicon.ico" />
+    <title>freq</title>        
+</head>
+
+<body>
+
+
+    <form oninput="
+    
+        f.value = convert_si(T_calc(
+          parse_si(T.value))[0]);
+    
+        omega.value = convert_si(T_calc(
+          parse_si(T.value))[1]);
+     
+    ">
+        <table><caption><a href="freq.js">T_calc</a></caption>
+
+    
+            <tr>
+                <td>T</td>
+                <td class="input"><input name="T"
+                    value=""
+                    maxlength="10" size="10"/></td>
+                <td>s</td>
+            </tr>
+     
+
+    
+            <tr>
+                <td>f</td>
+                <td class="output"><output name="f"></output></td>
+                <td>Hz</td>
+            </tr>
+    
+            <tr>
+                <td>omega</td>
+                <td class="output"><output name="omega"></output></td>
+                <td>rad/s</td>
+            </tr>
+     
+
+        </table>
+    </form>
+
+    <form oninput="
+    
+        T.value = convert_si(f_calc(
+          parse_si(f.value))[0]);
+    
+        omega.value = convert_si(f_calc(
+          parse_si(f.value))[1]);
+     
+    ">
+        <table><caption><a href="freq.js">f_calc</a></caption>
+
+    
+            <tr>
+                <td>f</td>
+                <td class="input"><input name="f"
+                    value=""
+                    maxlength="10" size="10"/></td>
+                <td>Hz</td>
+            </tr>
+     
+
+    
+            <tr>
+                <td>T</td>
+                <td class="output"><output name="T"></output></td>
+                <td>s</td>
+            </tr>
+    
+            <tr>
+                <td>omega</td>
+                <td class="output"><output name="omega"></output></td>
+                <td>rad/s</td>
+            </tr>
+     
+
+        </table>
+    </form>
+
+    <form oninput="
+    
+        T.value = convert_si(omega_calc(
+          parse_si(omega.value))[0]);
+    
+        f.value = convert_si(omega_calc(
+          parse_si(omega.value))[1]);
+     
+    ">
+        <table><caption><a href="freq.js">omega_calc</a></caption>
+
+    
+            <tr>
+                <td>omega</td>
+                <td class="input"><input name="omega"
+                    value=""
+                    maxlength="10" size="10"/></td>
+                <td>rad/s</td>
+            </tr>
+     
+
+    
+            <tr>
+                <td>T</td>
+                <td class="output"><output name="T"></output></td>
+                <td>s</td>
+            </tr>
+    
+            <tr>
+                <td>f</td>
+                <td class="output"><output name="f"></output></td>
+                <td>Hz</td>
+            </tr>
+     
+
+        </table>
+    </form>
+ 
+<script type="text/javascript" src="freq.js"></script>
+<script type="text/javascript" src="utils.js"></script>
+
+
+</body>
+</html>
