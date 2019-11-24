@@ -16,27 +16,29 @@
     
         C_ox.value = convert_si(C_ox_calc(
           parse_si(t_ox.value))[0]);
-     
+    
     ">
         <table><caption><a href="cox.js">C_ox_calc</a></caption>
 
     
             <tr>
                 <td>t_ox</td>
+        
                 <td class="input"><input name="t_ox"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td>m</td>
             </tr>
-     
-
     
             <tr>
                 <td>C_ox</td>
+        
                 <td class="output"><output name="C_ox"></output></td>
+        
                 <td>F/um2</td>
             </tr>
-     
+    
 
         </table>
     </form>
@@ -48,53 +50,61 @@
     
         area.value = convert_si(C_calc(
           parse_si(t_ox.value),parse_si(w.value),parse_si(l.value))[1]);
-     
+    
     ">
         <table><caption><a href="cox.js">C_calc</a></caption>
 
     
             <tr>
                 <td>t_ox</td>
+        
                 <td class="input"><input name="t_ox"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td>m</td>
             </tr>
     
             <tr>
                 <td>w</td>
+        
                 <td class="input"><input name="w"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td>m</td>
             </tr>
     
             <tr>
                 <td>l</td>
+        
                 <td class="input"><input name="l"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td>m</td>
             </tr>
-     
-
     
             <tr>
                 <td>C</td>
+        
                 <td class="output"><output name="C"></output></td>
+        
                 <td>F</td>
             </tr>
     
             <tr>
                 <td>area</td>
+        
                 <td class="output"><output name="area"></output></td>
+        
                 <td>um2</td>
             </tr>
-     
+    
 
         </table>
     </form>
- 
+
 <script type="text/javascript" src="cox.js"></script>
 <script type="text/javascript" src="utils.js"></script>
 

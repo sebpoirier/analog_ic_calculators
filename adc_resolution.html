@@ -16,35 +16,39 @@
     
         LSB.value = convert_si(lsb_calc(
           parse_si(ref.value),parse_si(n_bit.value))[0]);
-     
+    
     ">
         <table><caption><a href="adc_resolution.js">lsb_calc</a></caption>
 
     
             <tr>
                 <td>ref</td>
+        
                 <td class="input"><input name="ref"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td></td>
             </tr>
     
             <tr>
                 <td>n_bit</td>
+        
                 <td class="input"><input name="n_bit"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td></td>
             </tr>
-     
-
     
             <tr>
                 <td>LSB</td>
+        
                 <td class="output"><output name="LSB"></output></td>
+        
                 <td></td>
             </tr>
-     
+    
 
         </table>
     </form>
@@ -53,35 +57,39 @@
     
         ref.value = convert_si(ref_calc(
           parse_si(LSB.value),parse_si(n_bit.value))[0]);
-     
+    
     ">
         <table><caption><a href="adc_resolution.js">ref_calc</a></caption>
 
     
             <tr>
                 <td>LSB</td>
+        
                 <td class="input"><input name="LSB"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td></td>
             </tr>
     
             <tr>
                 <td>n_bit</td>
+        
                 <td class="input"><input name="n_bit"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td></td>
             </tr>
-     
-
     
             <tr>
                 <td>ref</td>
+        
                 <td class="output"><output name="ref"></output></td>
+        
                 <td></td>
             </tr>
-     
+    
 
         </table>
     </form>
@@ -90,39 +98,43 @@
     
         n_bit.value = convert_si(n_bit_calc(
           parse_si(ref.value),parse_si(LSB.value))[0]);
-     
+    
     ">
         <table><caption><a href="adc_resolution.js">n_bit_calc</a></caption>
 
     
             <tr>
                 <td>ref</td>
+        
                 <td class="input"><input name="ref"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td></td>
             </tr>
     
             <tr>
                 <td>LSB</td>
+        
                 <td class="input"><input name="LSB"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td></td>
             </tr>
-     
-
     
             <tr>
                 <td>n_bit</td>
+        
                 <td class="output"><output name="n_bit"></output></td>
+        
                 <td></td>
             </tr>
-     
+    
 
         </table>
     </form>
- 
+
 <script type="text/javascript" src="adc_resolution.js"></script>
 <script type="text/javascript" src="utils.js"></script>
 

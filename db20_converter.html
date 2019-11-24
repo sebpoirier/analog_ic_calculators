@@ -16,27 +16,29 @@
     
         A_dB.value = convert_si(A_dB_calc(
           parse_si(A.value))[0]);
-     
+    
     ">
         <table><caption><a href="db20_converter.js">A_dB_calc</a></caption>
 
     
             <tr>
                 <td>A</td>
+        
                 <td class="input"><input name="A"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td></td>
             </tr>
-     
-
     
             <tr>
                 <td>A_dB</td>
+        
                 <td class="output"><output name="A_dB"></output></td>
+        
                 <td>dB</td>
             </tr>
-     
+    
 
         </table>
     </form>
@@ -45,31 +47,33 @@
     
         A.value = convert_si(A_calc(
           parse_si(A_dB.value))[0]);
-     
+    
     ">
         <table><caption><a href="db20_converter.js">A_calc</a></caption>
 
     
             <tr>
                 <td>A_dB</td>
+        
                 <td class="input"><input name="A_dB"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td>dB</td>
             </tr>
-     
-
     
             <tr>
                 <td>A</td>
+        
                 <td class="output"><output name="A"></output></td>
+        
                 <td></td>
             </tr>
-     
+    
 
         </table>
     </form>
- 
+
 <script type="text/javascript" src="db20_converter.js"></script>
 <script type="text/javascript" src="utils.js"></script>
 

@@ -5,36 +5,32 @@
 {% block content %}
 {% for fun_name in js_di if fun_name != 'info' %}
     <form oninput="
-    {% for out_name in js_di[fun_name].ret_list %}
+    {% for out_name in js_di[fun_name].inout if js_di[fun_name].inout[out_name].type == 'output' %}
         {{ out_name }}.value = convert_si({{ fun_name }}(
-          {% for in_name in js_di[fun_name].fun_dict -%}
+          {% for in_name in js_di[fun_name].inout  if js_di[fun_name].inout[in_name].type == 'input' -%}
             parse_si({{in_name}}.value){{ "," if not loop.last else "" }}
         {%- endfor %})[{{ loop.index0}}]);
-    {% endfor %} 
+    {% endfor %}
     ">
         <table><caption><a href="{{ js_di.info.js_fn }}">{{ fun_name }}</a></caption>
 
-    {% for in_name, in_name_value in js_di[fun_name].fun_dict.items() %}
+    {% for name in js_di[fun_name].display_list %}
             <tr>
-                <td>{{ in_name }}</td>
-                <td class="input"><input name="{{ in_name }}"
-                    value="{{ in_name_value }}"
+                <td>{{ name }}</td>
+        {% if js_di[fun_name].inout[name].type == 'input' %}
+                <td class="input"><input name="{{ name }}"
+                    value="{{ js_di[fun_name].inout[name].value }}"
                     maxlength="10" size="10"/></td>
-                <td>{{ js_di['info']['inout'][in_name]['unit'] }}</td>
+        {% elif js_di[fun_name].inout[name].type == 'output' %}
+                <td class="output"><output name="{{ name }}"></output></td>
+        {% endif %}
+                <td>{{ js_di[fun_name].inout[name].unit }}</td>
             </tr>
-    {% endfor %} 
-
-    {% for out_name in js_di[fun_name].ret_list %}
-            <tr>
-                <td>{{ out_name }}</td>
-                <td class="output"><output name="{{ out_name }}"></output></td>
-                <td>{{ js_di['info']['inout'][out_name]['unit'] }}</td>
-            </tr>
-    {% endfor %} 
+    {% endfor %}
 
         </table>
     </form>
-{% endfor %} 
+{% endfor %}
 <script type="text/javascript" src="{{ js_di.info.js_fn }}"></script>
 <script type="text/javascript" src="utils.js"></script>
 

@@ -19,41 +19,47 @@
     
         tau.value = convert_si(fc_calc(
           parse_si(R.value),parse_si(C.value))[1]);
-     
+    
     ">
         <table><caption><a href="rc.js">fc_calc</a></caption>
 
     
             <tr>
                 <td>R</td>
+        
                 <td class="input"><input name="R"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td>Ohm</td>
             </tr>
     
             <tr>
                 <td>C</td>
+        
                 <td class="input"><input name="C"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td>F</td>
             </tr>
-     
-
     
             <tr>
                 <td>fc</td>
+        
                 <td class="output"><output name="fc"></output></td>
+        
                 <td>Hz</td>
             </tr>
     
             <tr>
                 <td>tau</td>
+        
                 <td class="output"><output name="tau"></output></td>
+        
                 <td>s</td>
             </tr>
-     
+    
 
         </table>
     </form>
@@ -65,41 +71,47 @@
     
         tau.value = convert_si(R_calc(
           parse_si(C.value),parse_si(fc.value))[1]);
-     
+    
     ">
         <table><caption><a href="rc.js">R_calc</a></caption>
 
     
             <tr>
                 <td>C</td>
+        
                 <td class="input"><input name="C"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td>F</td>
             </tr>
     
             <tr>
                 <td>fc</td>
+        
                 <td class="input"><input name="fc"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td>Hz</td>
             </tr>
-     
-
     
             <tr>
                 <td>R</td>
+        
                 <td class="output"><output name="R"></output></td>
+        
                 <td>Ohm</td>
             </tr>
     
             <tr>
                 <td>tau</td>
+        
                 <td class="output"><output name="tau"></output></td>
+        
                 <td>s</td>
             </tr>
-     
+    
 
         </table>
     </form>
@@ -111,41 +123,47 @@
     
         tau.value = convert_si(C_calc(
           parse_si(R.value),parse_si(fc.value))[1]);
-     
+    
     ">
         <table><caption><a href="rc.js">C_calc</a></caption>
 
     
             <tr>
                 <td>R</td>
+        
                 <td class="input"><input name="R"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td>Ohm</td>
             </tr>
     
             <tr>
                 <td>fc</td>
+        
                 <td class="input"><input name="fc"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td>Hz</td>
             </tr>
-     
-
     
             <tr>
                 <td>C</td>
+        
                 <td class="output"><output name="C"></output></td>
+        
                 <td>F</td>
             </tr>
     
             <tr>
                 <td>tau</td>
+        
                 <td class="output"><output name="tau"></output></td>
+        
                 <td>s</td>
             </tr>
-     
+    
 
         </table>
     </form>
@@ -157,91 +175,93 @@
     
         fc.value = convert_si(R_from_tau_calc(
           parse_si(C.value),parse_si(tau.value))[1]);
-     
+    
     ">
         <table><caption><a href="rc.js">R_from_tau_calc</a></caption>
 
     
             <tr>
                 <td>C</td>
+        
                 <td class="input"><input name="C"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td>F</td>
             </tr>
     
             <tr>
                 <td>tau</td>
+        
                 <td class="input"><input name="tau"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td>s</td>
             </tr>
-     
-
     
             <tr>
                 <td>R</td>
+        
                 <td class="output"><output name="R"></output></td>
+        
                 <td>Ohm</td>
             </tr>
     
             <tr>
                 <td>fc</td>
+        
                 <td class="output"><output name="fc"></output></td>
+        
                 <td>Hz</td>
             </tr>
-     
+    
 
         </table>
     </form>
 
     <form oninput="
     
-        C.value = convert_si(C_from_tau_calc(
-          parse_si(R.value),parse_si(fc.value))[0]);
-    
         fc.value = convert_si(C_from_tau_calc(
-          parse_si(R.value),parse_si(fc.value))[1]);
-     
+          parse_si(R.value))[0]);
+    
+        C.value = convert_si(C_from_tau_calc(
+          parse_si(R.value))[1]);
+    
     ">
         <table><caption><a href="rc.js">C_from_tau_calc</a></caption>
 
     
             <tr>
                 <td>R</td>
+        
                 <td class="input"><input name="R"
                     value=""
                     maxlength="10" size="10"/></td>
+        
                 <td>Ohm</td>
             </tr>
     
             <tr>
                 <td>fc</td>
-                <td class="input"><input name="fc"
-                    value=""
-                    maxlength="10" size="10"/></td>
+        
+                <td class="output"><output name="fc"></output></td>
+        
                 <td>Hz</td>
             </tr>
-     
-
     
             <tr>
                 <td>C</td>
+        
                 <td class="output"><output name="C"></output></td>
+        
                 <td>F</td>
             </tr>
     
-            <tr>
-                <td>fc</td>
-                <td class="output"><output name="fc"></output></td>
-                <td>Hz</td>
-            </tr>
-     
 
         </table>
     </form>
- 
+
 <script type="text/javascript" src="rc.js"></script>
 <script type="text/javascript" src="utils.js"></script>
 
