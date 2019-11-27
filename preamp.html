@@ -6,6 +6,7 @@
     <meta name="author" content="Sebastien Poirier">
     <link href="style.css" rel="stylesheet" type="text/css">
 	<link rel="shortcut icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>preamp</title>        
 </head>
 
@@ -41,16 +42,6 @@
             </tr>
     
             <tr>
-                <td>R</td>
-        
-                <td class="input"><input name="R"
-                    value=""
-                    maxlength="10" size="10"/></td>
-        
-                <td>Ohm</td>
-            </tr>
-    
-            <tr>
                 <td>n</td>
         
                 <td class="input"><input name="n"
@@ -79,11 +70,13 @@
             </tr>
     
             <tr>
-                <td>gain</td>
+                <td>R</td>
         
-                <td class="output"><output name="gain"></output></td>
+                <td class="input"><input name="R"
+                    value=""
+                    maxlength="10" size="10"/></td>
         
-                <td></td>
+                <td>Ohm</td>
             </tr>
     
             <tr>
@@ -92,6 +85,14 @@
                 <td class="output"><output name="V_cm"></output></td>
         
                 <td>V</td>
+            </tr>
+    
+            <tr>
+                <td>gain</td>
+        
+                <td class="output"><output name="gain"></output></td>
+        
+                <td></td>
             </tr>
     
             <tr>

@@ -11,7 +11,7 @@ var info = {
         "V_cm": {"unit": "V"}
     },
     "gain_calc": {
-        "display_list": "I R  n T gm gain V_cm C BW"
+        "display_list": "I n T gm R V_cm gain C BW"
     }
 };
 
