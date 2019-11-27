@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ekv_vdsat</title>        
+</head>
+
+<body>
+
+
+    <form oninput="
+    
+        Vdsat.value = convert_si(ekv_vdsat_calc(
+          parse_si(IF.value),parse_si(T.value))[0]);
+    
+    ">
+        <table><caption><a href="ekv_vdsat.js">ekv_vdsat_calc</a></caption>
+
+    
+            <tr>
+                <td>IF</td>
+        
+                <td class="input"><input name="IF"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td></td>
+            </tr>
+    
+            <tr>
+                <td>T</td>
+        
+                <td class="input"><input name="T"
+                    value="27"
+                    maxlength="10" size="10"/></td>
+        
+                <td>deg. C</td>
+            </tr>
+    
+            <tr>
+                <td>Vdsat</td>
+        
+                <td class="output"><output name="Vdsat"></output></td>
+        
+                <td>V</td>
+            </tr>
+    
+
+        </table>
+    </form>
+
+<script type="text/javascript" src="ekv_vdsat.js"></script>
+<script type="text/javascript" src="utils.js"></script>
+
+
+</body>
+</html>

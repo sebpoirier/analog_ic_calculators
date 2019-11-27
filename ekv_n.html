@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ekv_n</title>        
+</head>
+
+<body>
+
+
+    <form oninput="
+    
+        n.value = convert_si(ekv_n_calc(
+          parse_si(gm.value),parse_si(gmb.value))[0]);
+    
+    ">
+        <table><caption><a href="ekv_n.js">ekv_n_calc</a></caption>
+
+    
+            <tr>
+                <td>gm</td>
+        
+                <td class="input"><input name="gm"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>S</td>
+            </tr>
+    
+            <tr>
+                <td>gmb</td>
+        
+                <td class="input"><input name="gmb"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>S</td>
+            </tr>
+    
+            <tr>
+                <td>n</td>
+        
+                <td class="output"><output name="n"></output></td>
+        
+                <td></td>
+            </tr>
+    
+
+        </table>
+    </form>
+
+<script type="text/javascript" src="ekv_n.js"></script>
+<script type="text/javascript" src="utils.js"></script>
+
+
+</body>
+</html>

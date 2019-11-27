@@ -7,7 +7,7 @@
     <link href="style.css" rel="stylesheet" type="text/css">
 	<link rel="shortcut icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gm_weak_inv</title>        
+    <title>ekv_gm</title>        
 </head>
 
 <body>
@@ -15,21 +15,31 @@
 
     <form oninput="
     
-        gm.value = convert_si(gm_calc(
-          parse_si(I.value),parse_si(n.value),parse_si(T.value))[0]);
+        gm.value = convert_si(ekv_gm_calc(
+          parse_si(I_D.value),parse_si(IF.value),parse_si(n.value),parse_si(T.value))[0]);
     
     ">
-        <table><caption><a href="gm_weak_inv.js">gm_calc</a></caption>
+        <table><caption><a href="ekv_gm.js">ekv_gm_calc</a></caption>
 
     
             <tr>
-                <td>I</td>
+                <td>I_D</td>
         
-                <td class="input"><input name="I"
+                <td class="input"><input name="I_D"
                     value=""
                     maxlength="10" size="10"/></td>
         
                 <td>A</td>
+            </tr>
+    
+            <tr>
+                <td>IF</td>
+        
+                <td class="input"><input name="IF"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td></td>
             </tr>
     
             <tr>
@@ -64,7 +74,7 @@
         </table>
     </form>
 
-<script type="text/javascript" src="gm_weak_inv.js"></script>
+<script type="text/javascript" src="ekv_gm.js"></script>
 <script type="text/javascript" src="utils.js"></script>
 
 
