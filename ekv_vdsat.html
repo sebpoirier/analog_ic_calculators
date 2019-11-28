@@ -54,6 +54,47 @@
         </table>
     </form>
 
+    <form oninput="
+    
+        IF.value = convert_si(ekv_if_calc(
+          parse_si(Vdsat.value),parse_si(T.value))[0]);
+    
+    ">
+        <table><caption><a href="ekv_vdsat.js">ekv_if_calc</a></caption>
+
+    
+            <tr>
+                <td>Vdsat</td>
+        
+                <td class="input"><input name="Vdsat"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>V</td>
+            </tr>
+    
+            <tr>
+                <td>T</td>
+        
+                <td class="input"><input name="T"
+                    value="27"
+                    maxlength="10" size="10"/></td>
+        
+                <td>deg. C</td>
+            </tr>
+    
+            <tr>
+                <td>IF</td>
+        
+                <td class="output"><output name="IF"></output></td>
+        
+                <td></td>
+            </tr>
+    
+
+        </table>
+    </form>
+
 <script type="text/javascript" src="ekv_vdsat.js"></script>
 <script type="text/javascript" src="utils.js"></script>
 

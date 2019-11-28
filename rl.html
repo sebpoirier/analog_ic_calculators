@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rl</title>        
+</head>
+
+<body>
+
+
+    <form oninput="
+    
+        fc.value = convert_si(fc_calc(
+          parse_si(R.value),parse_si(L.value))[0]);
+    
+        tau.value = convert_si(fc_calc(
+          parse_si(R.value),parse_si(L.value))[1]);
+    
+    ">
+        <table><caption><a href="rl.js">fc_calc</a></caption>
+
+    
+            <tr>
+                <td>R</td>
+        
+                <td class="input"><input name="R"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>Ohm</td>
+            </tr>
+    
+            <tr>
+                <td>L</td>
+        
+                <td class="input"><input name="L"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>H</td>
+            </tr>
+    
+            <tr>
+                <td>fc</td>
+        
+                <td class="output"><output name="fc"></output></td>
+        
+                <td>Hz</td>
+            </tr>
+    
+            <tr>
+                <td>tau</td>
+        
+                <td class="output"><output name="tau"></output></td>
+        
+                <td>s</td>
+            </tr>
+    
+
+        </table>
+    </form>
+
+    <form oninput="
+    
+        R.value = convert_si(R_calc(
+          parse_si(L.value),parse_si(fc.value))[0]);
+    
+        tau.value = convert_si(R_calc(
+          parse_si(L.value),parse_si(fc.value))[1]);
+    
+    ">
+        <table><caption><a href="rl.js">R_calc</a></caption>
+
+    
+            <tr>
+                <td>L</td>
+        
+                <td class="input"><input name="L"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>H</td>
+            </tr>
+    
+            <tr>
+                <td>fc</td>
+        
+                <td class="input"><input name="fc"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>Hz</td>
+            </tr>
+    
+            <tr>
+                <td>R</td>
+        
+                <td class="output"><output name="R"></output></td>
+        
+                <td>Ohm</td>
+            </tr>
+    
+            <tr>
+                <td>tau</td>
+        
+                <td class="output"><output name="tau"></output></td>
+        
+                <td>s</td>
+            </tr>
+    
+
+        </table>
+    </form>
+
+    <form oninput="
+    
+        L.value = convert_si(L_calc(
+          parse_si(R.value),parse_si(fc.value))[0]);
+    
+        tau.value = convert_si(L_calc(
+          parse_si(R.value),parse_si(fc.value))[1]);
+    
+    ">
+        <table><caption><a href="rl.js">L_calc</a></caption>
+
+    
+            <tr>
+                <td>R</td>
+        
+                <td class="input"><input name="R"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>Ohm</td>
+            </tr>
+    
+            <tr>
+                <td>fc</td>
+        
+                <td class="input"><input name="fc"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>Hz</td>
+            </tr>
+    
+            <tr>
+                <td>L</td>
+        
+                <td class="output"><output name="L"></output></td>
+        
+                <td>H</td>
+            </tr>
+    
+            <tr>
+                <td>tau</td>
+        
+                <td class="output"><output name="tau"></output></td>
+        
+                <td>s</td>
+            </tr>
+    
+
+        </table>
+    </form>
+
+<script type="text/javascript" src="rl.js"></script>
+<script type="text/javascript" src="utils.js"></script>
+
+
+</body>
+</html>

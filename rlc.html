@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rlc</title>        
+</head>
+
+<body>
+
+
+    <form oninput="
+    
+        fc.value = convert_si(fc_calc(
+          parse_si(R.value),parse_si(L.value),parse_si(C.value))[0]);
+    
+        Q.value = convert_si(fc_calc(
+          parse_si(R.value),parse_si(L.value),parse_si(C.value))[1]);
+    
+    ">
+        <table><caption><a href="rlc.js">fc_calc</a></caption>
+
+    
+            <tr>
+                <td>R</td>
+        
+                <td class="input"><input name="R"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>Ohm</td>
+            </tr>
+    
+            <tr>
+                <td>L</td>
+        
+                <td class="input"><input name="L"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>H</td>
+            </tr>
+    
+            <tr>
+                <td>C</td>
+        
+                <td class="input"><input name="C"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>C</td>
+            </tr>
+    
+            <tr>
+                <td>fc</td>
+        
+                <td class="output"><output name="fc"></output></td>
+        
+                <td>Hz</td>
+            </tr>
+    
+            <tr>
+                <td>Q</td>
+        
+                <td class="output"><output name="Q"></output></td>
+        
+                <td></td>
+            </tr>
+    
+
+        </table>
+    </form>
+
+<script type="text/javascript" src="rlc.js"></script>
+<script type="text/javascript" src="utils.js"></script>
+
+
+</body>
+</html>
