@@ -16,6 +16,6 @@ function ekv_vdsat_calc(IF, T=27) {
 function ekv_if_calc(Vdsat, T=27) {
     var T_K = (273.15 + T);
     var V_t = 8.62e-5 * T_K;
-    var IF = (Vdsat / V_t - 4)/2;
+    var IF = (Vdsat / (V_t * 2) - 2)**2;
     return ([IF]);
 }
