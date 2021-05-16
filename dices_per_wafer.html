@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="favicon.ico" />
+    <title>dices_per_wafer</title>        
+</head>
+
+<body>
+
+
+    <form oninput="
+    
+        n.value = convert_si(n_calc(
+          parse_si(x.value),parse_si(y.value),parse_si(d.value))[0]);
+    
+    ">
+        <table><caption><a href="dices_per_wafer.js">n_calc</a></caption>
+
+    
+            <tr>
+                <td>x</td>
+        
+                <td class="input"><input name="x"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>mm</td>
+            </tr>
+    
+            <tr>
+                <td>y</td>
+        
+                <td class="input"><input name="y"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>mm</td>
+            </tr>
+    
+            <tr>
+                <td>d</td>
+        
+                <td class="input"><input name="d"
+                    value="200"
+                    maxlength="10" size="10"/></td>
+        
+                <td>mm</td>
+            </tr>
+    
+            <tr>
+                <td>n</td>
+        
+                <td class="output"><output name="n"></output></td>
+        
+                <td></td>
+            </tr>
+    
+
+        </table>
+    </form>
+
+<script type="text/javascript" src="dices_per_wafer.js"></script>
+<script type="text/javascript" src="utils.js"></script>
+
+
+</body>
+</html>

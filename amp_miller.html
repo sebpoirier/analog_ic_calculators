@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="favicon.ico" />
+    <title>amp_miller</title>        
+</head>
+
+<body>
+
+
+    <form oninput="
+    
+        BW.value = convert_si(gain_calc(
+          parse_si(gm_dp.value),parse_si(gm_2.value),parse_si(C_c.value),parse_si(C_l.value))[0]);
+    
+        f_p2.value = convert_si(gain_calc(
+          parse_si(gm_dp.value),parse_si(gm_2.value),parse_si(C_c.value),parse_si(C_l.value))[1]);
+    
+        PM.value = convert_si(gain_calc(
+          parse_si(gm_dp.value),parse_si(gm_2.value),parse_si(C_c.value),parse_si(C_l.value))[2]);
+    
+    ">
+        <table><caption><a href="amp_miller.js">gain_calc</a></caption>
+
+    
+            <tr>
+                <td>gm_dp</td>
+        
+                <td class="input"><input name="gm_dp"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>S</td>
+            </tr>
+    
+            <tr>
+                <td>gm_2</td>
+        
+                <td class="input"><input name="gm_2"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>S</td>
+            </tr>
+    
+            <tr>
+                <td>C_c</td>
+        
+                <td class="input"><input name="C_c"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>F</td>
+            </tr>
+    
+            <tr>
+                <td>C_l</td>
+        
+                <td class="input"><input name="C_l"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>F</td>
+            </tr>
+    
+            <tr>
+                <td>BW</td>
+        
+                <td class="output"><output name="BW"></output></td>
+        
+                <td>Hz</td>
+            </tr>
+    
+            <tr>
+                <td>f_p2</td>
+        
+                <td class="output"><output name="f_p2"></output></td>
+        
+                <td>Hz</td>
+            </tr>
+    
+            <tr>
+                <td>PM</td>
+        
+                <td class="output"><output name="PM"></output></td>
+        
+                <td>deg</td>
+            </tr>
+    
+
+        </table>
+    </form>
+
+<script type="text/javascript" src="amp_miller.js"></script>
+<script type="text/javascript" src="utils.js"></script>
+
+
+</body>
+</html>
