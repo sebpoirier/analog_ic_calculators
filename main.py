@@ -76,8 +76,8 @@ if __name__ == '__main__':
             f_out.write(calculator_html)
 
 # index
-    index_template = env.get_template('index.html')
-    title_tuple = [(k, title_dict[k]) for k in sorted(title_dict, key=title_dict.get)]
-    index_html = index_template.render(title_tuple=title_tuple)
-    with open('index.html', 'w') as f_out:
-        f_out.write(index_html)
+    #index_template = env.get_template('index.html')
+    #title_tuple = [(k, title_dict[k]) for k in sorted(title_dict, key=title_dict.get)]
+    #index_html = index_template.render(title_tuple=title_tuple)
+    #with open('index.html', 'w') as f_out:
+        #f_out.write(index_html)

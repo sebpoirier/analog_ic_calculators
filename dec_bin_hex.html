@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="favicon.ico" />
+    <title>dec_bin_hex</title>        
+</head>
+
+<body>
+
+
+    <form oninput="
+    
+        bin.value = parseInt(dec.value).toString(2);
+        hex.value = parseInt(dec.value).toString(16);
+    
+    ">
+        <table><caption>dec</caption>
+
+    
+
+            <tr>
+                <td>dec</td>
+        
+                <td class="input"><input name="dec"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+            </tr>
+    
+            <tr>
+                <td>bin</td>
+        
+                <td class="output"><output name="bin"></output></td>
+        
+            </tr>
+    
+            <tr>
+                <td>hex</td>
+        
+                <td class="output"><output name="hex"></output></td>
+        
+            </tr>
+    
+
+        </table>
+    </form>
+
+<script type="text/javascript" src="utils.js"></script>
+
+
+</body>
+</html>
