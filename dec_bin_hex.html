@@ -6,51 +6,76 @@
     <meta name="author" content="Sebastien Poirier">
     <link href="style.css" rel="stylesheet" type="text/css">
 	<link rel="shortcut icon" href="favicon.ico" />
-    <title>dec_bin_hex</title>        
+    <title>dec_bin_hex</title>
 </head>
 
 <body>
 
-
     <form oninput="
-    
         bin.value = parseInt(dec.value).toString(2);
         hex.value = parseInt(dec.value).toString(16);
-    
     ">
         <table><caption>dec</caption>
-
-    
-
             <tr>
                 <td>dec</td>
-        
                 <td class="input"><input name="dec"
-                    value=""
-                    maxlength="10" size="10"/></td>
-        
+                    value=""/></td>
             </tr>
-    
+
             <tr>
                 <td>bin</td>
-        
                 <td class="output"><output name="bin"></output></td>
-        
             </tr>
-    
+
             <tr>
                 <td>hex</td>
-        
                 <td class="output"><output name="hex"></output></td>
-        
             </tr>
-    
-
         </table>
     </form>
 
-<script type="text/javascript" src="utils.js"></script>
+    <form oninput="
+        hex.value = parseInt(bin.value, 2).toString(16);
+        dec.value = parseInt(bin.value, 2).toString(10);
+    ">
+        <table><caption>bin</caption>
+            <tr>
+                <td>bin</td>
+                <td class="input"><input name="bin"
+                    value=""></td>
+            </tr>
 
+            <tr>
+                <td>hex</td>
+                <td class="output"><output name="hex"></output></td>
+            </tr>
+            <tr>
+                <td>dec</td>
+                <td class="output"><output name="dec"></output></td>
+            </tr>
+        </table>
+    </form>
+
+    <form oninput="
+        bin.value = parseInt(hex.value, 16).toString(2);
+        dec.value = parseInt(hex.value, 16).toString(10);
+    ">
+        <table><caption>hex</caption>
+            <tr>
+                <td>hex</td>
+                <td class="input"><input name="hex"
+                    value=""></td>
+            </tr>
+            <tr>
+                <td>bin</td>
+                <td class="output"><output name="bin"></output></td>
+            </tr>
+            <tr>
+                <td>dec</td>
+                <td class="output"><output name="dec"></output></td>
+            </tr>
+        </table>
+    </form>
 
 </body>
 </html>
