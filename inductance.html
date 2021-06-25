@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sebastien Poirier">
+    <link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="favicon.ico" />
+    <title>inductance</title>        
+</head>
+
+<body>
+
+
+    <form oninput="
+    
+        L.value = convert_si(ind_calc(
+          parse_si(l.value),parse_si(w.value),parse_si(t.value),parse_si(d.value))[0]);
+    
+        M.value = convert_si(ind_calc(
+          parse_si(l.value),parse_si(w.value),parse_si(t.value),parse_si(d.value))[1]);
+    
+    ">
+        <table><caption><a href="inductance.js">ind_calc</a></caption>
+
+    
+            <tr>
+                <td>l</td>
+        
+                <td class="input"><input name="l"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>m</td>
+            </tr>
+    
+            <tr>
+                <td>w</td>
+        
+                <td class="input"><input name="w"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>m</td>
+            </tr>
+    
+            <tr>
+                <td>t</td>
+        
+                <td class="input"><input name="t"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>m</td>
+            </tr>
+    
+            <tr>
+                <td>d</td>
+        
+                <td class="input"><input name="d"
+                    value=""
+                    maxlength="10" size="10"/></td>
+        
+                <td>m</td>
+            </tr>
+    
+            <tr>
+                <td>L</td>
+        
+                <td class="output"><output name="L"></output></td>
+        
+                <td>H</td>
+            </tr>
+    
+            <tr>
+                <td>M</td>
+        
+                <td class="output"><output name="M"></output></td>
+        
+                <td>H</td>
+            </tr>
+    
+
+        </table>
+    </form>
+
+<script type="text/javascript" src="inductance.js"></script>
+<script type="text/javascript" src="utils.js"></script>
+
+
+</body>
+</html>
