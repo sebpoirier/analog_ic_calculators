@@ -20,6 +20,12 @@
         Q.value = convert_si(fc_calc(
           parse_si(R.value),parse_si(L.value),parse_si(C.value))[1]);
     
+        Tau.value = convert_si(fc_calc(
+          parse_si(R.value),parse_si(L.value),parse_si(C.value))[2]);
+    
+        damp_factor.value = convert_si(fc_calc(
+          parse_si(R.value),parse_si(L.value),parse_si(C.value))[3]);
+    
     ">
         <table><caption><a href="rlc.js">fc_calc</a></caption>
 
@@ -66,6 +72,22 @@
                 <td>Q</td>
         
                 <td class="output"><output name="Q"></output></td>
+        
+                <td></td>
+            </tr>
+    
+            <tr>
+                <td>Tau</td>
+        
+                <td class="output"><output name="Tau"></output></td>
+        
+                <td>s</td>
+            </tr>
+    
+            <tr>
+                <td>damp_factor</td>
+        
+                <td class="output"><output name="damp_factor"></output></td>
         
                 <td></td>
             </tr>
